@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Қоғамдастық — ЖасылБақ</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .community-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 2rem;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 28px;
+    }
+
+    /* MY PROFILE CARD */
+    .profile-card {
+      background: linear-gradient(135deg, var(--green-mid), var(--green-dark));
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      color: white;
+    }
+    .profile-top { display: flex; gap: 16px; align-items: center; margin-bottom: 20px; }
+    .profile-avatar {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+      border: 3px solid rgba(255,255,255,0.3);
+    }
+    .profile-name { font-size: 18px; font-weight: 700; }
+    .profile-handle { font-size: 13px; opacity: 0.7; margin-top: 2px; }
+    .profile-level {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+    .profile-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .profile-stat {
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+    }
+    .profile-stat-val { font-size: 22px; font-weight: 700; font-family: 'Playfair Display', serif; }
+    .profile-stat-label { font-size: 10px; opacity: 0.7; margin-top: 2px; }
+
+    /* STREAK */
+    .streak-card {
+      background: linear-gradient(135deg, #f59e0b, #f97316);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .streak-fire { font-size: 40px; }
+    .streak-val { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; line-height: 1; }
+    .streak-label { font-size: 13px; opacity: 0.85; margin-top: 4px; }
+    .streak-mini { display: flex; gap: 4px; margin-top: 10px; }
+    .streak-dot {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 700;
+    }
+    .streak-dot.done { background: rgba(255,255,255,0.9); color: #f97316; }
+    .streak-dot.today { background: white; color: #f97316; border: 2px solid white; }
+    .streak-dot.miss { background: rgba(255,255,255,0.2); color: rgba(255,255,255,0.6); }
+
+    /* BADGES */
+    .badges-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .badge-item {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 4px;
+    }
+    .badge-icon-wrap {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+    }
+    .badge-item-label { font-size: 10px; color: var(--text-light); font-weight: 600; text-align: center; max-width: 52px; }
+
+    /* GROUPS */
+    .group-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(90,158,110,0.12);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      display: flex;
+      gap: 20px;
+      transition: all 0.3s;
+    }
+    .group-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .group-icon-wrap {
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+    .group-info { flex: 1; }
+    .group-name { font-size: 17px; font-weight: 700; color: var(--green-dark); }
+    .group-desc { font-size: 13px; color: var(--text-mid); margin-top: 4px; line-height: 1.5; }
+    .group-meta { display: flex; gap: 16px; margin-top: 12px; flex-wrap: wrap; }
+    .group-meta-item { font-size: 12px; color: var(--text-light); font-weight: 600; display: flex; align-items: center; gap: 4px; }
+    .group-actions { display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; gap: 12px; }
+    .joined-badge {
+      background: var(--green-mist);
+      color: var(--green-main);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* LEADERBOARD */
+    .leaderboard-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(90,158,110,0.12);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+    .lb-header {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--green-mist);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+    .lb-tabs { display: flex; gap: 8px; margin-top: 8px; }
+    .lb-tab {
+      font-size: 12px; font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 50px;
+      border: 1px solid var(--green-pale);
+      background: transparent;
+      color: var(--text-mid);
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      transition: all 0.2s;
+    }
+    .lb-tab.active { background: var(--green-main); color: white; border-color: var(--green-main); }
+    .lb-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 20px;
+      border-bottom: 1px solid rgba(90,158,110,0.07);
+      transition: background 0.15s;
+    }
+    .lb-row:hover { background: var(--green-mist); }
+    .lb-row:last-child { border-bottom: none; }
+    .lb-rank {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .rank-1 { background: #fef3c7; color: #d97706; }
+    .rank-2 { background: #f1f5f9; color: #64748b; }
+    .rank-3 { background: #fff7ed; color: #c2410c; }
+    .rank-other { background: var(--green-mist); color: var(--green-main); font-size: 11px; }
+    .lb-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+    .lb-name { font-size: 14px; font-weight: 600; color: var(--text-dark); flex: 1; }
+    .lb-city { font-size: 11px; color: var(--text-light); }
+    .lb-points { font-size: 14px; font-weight: 700; color: var(--green-main); }
+    .lb-streak { font-size: 11px; color: #f97316; font-weight: 600; }
+    .lb-me { background: var(--green-mist) !important; }
+
+    @media (max-width: 900px) {
+      .community-layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🌱</div>
+    <div>
+      <span class="nav-logo-text">ЖасылБақ</span>
+      <span class="nav-logo-sub">Өсімдіктер мониторингі</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Басты бет</a></li>
+    <li><a href="monitoring.html">Мониторинг</a></li>
+    <li><a href="community.html" class="active">Қоғамдастық</a></li>
+    <li><a href="store.html">Дүкен</a></li>
+    <li><a href="news.html">Жаңалықтар</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-hero">
+    <div class="container">
+      <div class="section-label">Қоғамдастық</div>
+      <h1 class="section-title">Бірге өсірейік</h1>
+      <p class="section-sub">Пікірлес адамдармен топ құрыңыз, рейтингте жоғарылаңыз және бір-бірін ынталандырыңыз.</p>
+    </div>
+  </div>
+
+  <div class="community-layout">
+    <!-- MAIN -->
+    <div style="display:flex;flex-direction:column;gap:28px">
+
+      <!-- MY STREAK + PROFILE -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <div class="profile-card">
+          <div class="profile-top">
+            <div class="profile-avatar">👨‍🌾</div>
+            <div>
+              <div class="profile-name">Асқар Жанбеков</div>
+              <div class="profile-handle">@askar_garden</div>
+              <div class="profile-level">🌿 Деңгей: Маман</div>
+            </div>
+          </div>
+          <div class="profile-stats">
+            <div class="profile-stat">
+              <div class="profile-stat-val">1 240</div>
+              <div class="profile-stat-label">Жалпы ұпай</div>
+            </div>
+            <div class="profile-stat">
+              <div class="profile-stat-val">24</div>
+              <div class="profile-stat-label">Өсімдік</div>
+            </div>
+            <div class="profile-stat">
+              <div class="profile-stat-val">3</div>
+              <div class="profile-stat-label">Топ</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="streak-card">
+            <div class="streak-fire">🔥</div>
+            <div>
+              <div class="streak-val">30</div>
+              <div class="streak-label">Күндік серия!</div>
+              <div class="streak-mini">
+                <div class="streak-dot done">Дс</div>
+                <div class="streak-dot done">Сс</div>
+                <div class="streak-dot done">Ср</div>
+                <div class="streak-dot done">Бс</div>
+                <div class="streak-dot done">Жм</div>
+                <div class="streak-dot done">Сб</div>
+                <div class="streak-dot today">Жс</div>
+              </div>
+            </div>
+          </div>
+          <div style="background:var(--white);border-radius:var(--radius-md);padding:16px;border:1px solid rgba(90,158,110,0.12);box-shadow:var(--shadow-sm)">
+            <div style="font-size:13px;font-weight:700;color:var(--green-dark);margin-bottom:12px">🏅 Жетістіктер</div>
+            <div class="badges-row">
+              <div class="badge-item"><div class="badge-icon-wrap" style="background:#fef3c7">🌱</div><div class="badge-item-label">Бастауыш</div></div>
+              <div class="badge-item"><div class="badge-icon-wrap" style="background:#e8f5ec">🌳</div><div class="badge-item-label">100 күн</div></div>
+              <div class="badge-item"><div class="badge-icon-wrap" style="background:#fff0f0">🔥</div><div class="badge-item-label">30 серия</div></div>
+              <div class="badge-item"><div class="badge-icon-wrap" style="background:#f0f0ff">⭐</div><div class="badge-item-label">Үздік</div></div>
+              <div class="badge-item"><div class="badge-icon-wrap" style="background:#f5f0ff;opacity:0.5">🏆</div><div class="badge-item-label" style="opacity:0.5">Жабық</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GROUPS -->
+      <div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:12px">
+          <div>
+            <div style="font-size:16px;font-weight:700;color:var(--green-dark)">Қоғамдастық топтары</div>
+            <div style="font-size:13px;color:var(--text-light);margin-top:2px">18 топ бар · 3-іне қосылдыңыз</div>
+          </div>
+          <input type="text" placeholder="🔍 Топ іздеу..." style="padding:8px 14px;border:1.5px solid rgba(90,158,110,0.25);border-radius:50px;font-family:'Nunito',sans-serif;font-size:14px;outline:none;min-width:200px;background:white;color:var(--text-dark)" />
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+
+          <div class="group-card" style="border-left: 4px solid var(--green-main)">
+            <div class="group-icon-wrap" style="background:var(--green-mist)">🌳</div>
+            <div class="group-info">
+              <div class="group-name">Алматы Ағаштар Клубы</div>
+              <div class="group-desc">Алматы қаласының жасыл белдеуін сақтауға арналған топ. Ай сайын бірге ағаш отырғызамыз.</div>
+              <div class="group-meta">
+                <div class="group-meta-item">👥 128 мүше</div>
+                <div class="group-meta-item">🌲 840 ағаш</div>
+                <div class="group-meta-item">🔥 Белсенді</div>
+              </div>
+            </div>
+            <div class="group-actions">
+              <span class="joined-badge">✓ Қосылдым</span>
+              <div style="text-align:right"><div style="font-size:11px;color:var(--text-light)">Сіздің орныңыз</div><div style="font-size:22px;font-weight:700;color:var(--green-main)">#4</div></div>
+            </div>
+          </div>
+
+          <div class="group-card" style="border-left: 4px solid #f59e0b">
+            <div class="group-icon-wrap" style="background:#fff8e6">🌻</div>
+            <div class="group-info">
+              <div class="group-name">Гүлшілер Одағы</div>
+              <div class="group-desc">Гүл өсіретіндер үшін қоғамдастық. Тәжірибе, кеңес және гүл алмасу орны.</div>
+              <div class="group-meta">
+                <div class="group-meta-item">👥 74 мүше</div>
+                <div class="group-meta-item">🌸 320 гүл</div>
+                <div class="group-meta-item">📅 Апта сайын жиын</div>
+              </div>
+            </div>
+            <div class="group-actions">
+              <span class="joined-badge">✓ Қосылдым</span>
+              <div style="text-align:right"><div style="font-size:11px;color:var(--text-light)">Сіздің орныңыз</div><div style="font-size:22px;font-weight:700;color:#f59e0b">#12</div></div>
+            </div>
+          </div>
+
+          <div class="group-card">
+            <div class="group-icon-wrap" style="background:#e6f1fb">🌾</div>
+            <div class="group-info">
+              <div class="group-name">Органикалық Бақша</div>
+              <div class="group-desc">Химиясыз, табиғи тыңайтқыш пен органикалық әдіспен өсіруге арналған топ.</div>
+              <div class="group-meta">
+                <div class="group-meta-item">👥 52 мүше</div>
+                <div class="group-meta-item">🥕 Жаңа топ</div>
+              </div>
+            </div>
+            <div class="group-actions">
+              <button class="btn btn-primary" style="padding:8px 18px;font-size:13px">Қосылу</button>
+            </div>
+          </div>
+
+          <div class="group-card">
+            <div class="group-icon-wrap" style="background:#f5ece0">🌵</div>
+            <div class="group-info">
+              <div class="group-name">Сукуленттер клубы</div>
+              <div class="group-desc">Кактус, сукулент және шөлді өсімдіктер сүйетіндер үшін арнайы топ.</div>
+              <div class="group-meta">
+                <div class="group-meta-item">👥 38 мүше</div>
+                <div class="group-meta-item">🌵 Жауапкершілік аз</div>
+              </div>
+            </div>
+            <div class="group-actions">
+              <button class="btn btn-primary" style="padding:8px 18px;font-size:13px">Қосылу</button>
+            </div>
+          </div>
+
+          <div class="group-card">
+            <div class="group-icon-wrap" style="background:#e8f5ec">🌿</div>
+            <div class="group-info">
+              <div class="group-name">Үй Өсімдіктері</div>
+              <div class="group-desc">Пәтерде, үйде өсімдік өсіретіндерге арналған. Монстера, фикус, потос, т.б.</div>
+              <div class="group-meta">
+                <div class="group-meta-item">👥 94 мүше</div>
+                <div class="group-meta-item">🏠 Үй жағдайы</div>
+              </div>
+            </div>
+            <div class="group-actions">
+              <span class="joined-badge">✓ Қосылдым</span>
+              <div style="text-align:right"><div style="font-size:11px;color:var(--text-light)">Сіздің орныңыз</div><div style="font-size:22px;font-weight:700;color:var(--green-main)">#7</div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR: LEADERBOARD -->
+    <aside style="display:flex;flex-direction:column;gap:20px">
+
+      <!-- GLOBAL LEADERBOARD -->
+      <div class="leaderboard-card">
+        <div class="lb-header">
+          🏆 Рейтинг
+          <div class="lb-tabs">
+            <button class="lb-tab active">Апталық</button>
+            <button class="lb-tab">Айлық</button>
+            <button class="lb-tab">Жалпы</button>
+          </div>
+        </div>
+        <div class="lb-row rank-1-row">
+          <div class="lb-rank rank-1">🥇</div>
+          <div class="lb-avatar" style="background:#fef3c7;color:#d97706">АМ</div>
+          <div><div class="lb-name">Айгүл Маратова</div><div class="lb-city">Алматы · 🔥 45 серия</div></div>
+          <div style="text-align:right"><div class="lb-points">2 840</div><div class="lb-streak">ұпай</div></div>
+        </div>
+        <div class="lb-row">
+          <div class="lb-rank rank-2">🥈</div>
+          <div class="lb-avatar" style="background:#e8f5ec;color:var(--green-main)">НС</div>
+          <div><div class="lb-name">Нұрлан Сейтов</div><div class="lb-city">Астана · 🔥 38 серия</div></div>
+          <div style="text-align:right"><div class="lb-points">2 510</div><div class="lb-streak">ұпай</div></div>
+        </div>
+        <div class="lb-row">
+          <div class="lb-rank rank-3">🥉</div>
+          <div class="lb-avatar" style="background:#fff8e6;color:#f59e0b">ЗА</div>
+          <div><div class="lb-name">Зарина Ахметова</div><div class="lb-city">Шымкент · 🔥 29 серия</div></div>
+          <div style="text-align:right"><div class="lb-points">2 280</div><div class="lb-streak">ұпай</div></div>
+        </div>
+        <div class="lb-row">
+          <div class="lb-rank rank-other">4</div>
+          <div class="lb-avatar" style="background:#f5ece0;color:var(--earth-mid)">БД</div>
+          <div><div class="lb-name">Болат Дүйсенов</div><div class="lb-city">Алматы</div></div>
+          <div style="text-align:right"><div class="lb-points">1 970</div><div class="lb-streak">ұпай</div></div>
+        </div>
+        <div class="lb-row lb-me">
+          <div class="lb-rank rank-other" style="background:var(--green-main);color:white">5</div>
+          <div class="lb-avatar" style="background:var(--green-mist);color:var(--green-main)">АЖ</div>
+          <div><div class="lb-name" style="color:var(--green-dark)">Асқар Жанбеков</div><div class="lb-city">Алматы · Сіз</div></div>
+          <div style="text-align:right"><div class="lb-points" style="color:var(--green-dark)">1 240</div><div class="lb-streak">ұпай</div></div>
+        </div>
+        <div class="lb-row">
+          <div class="lb-rank rank-other">6</div>
+          <div class="lb-avatar" style="background:#e6f1fb;color:#185fa5">ДК</div>
+          <div><div class="lb-name">Диана Қасымова</div><div class="lb-city">Қарағанды</div></div>
+          <div style="text-align:right"><div class="lb-points">1 180</div><div class="lb-streak">ұпай</div></div>
+        </div>
+        <div class="lb-row">
+          <div class="lb-rank rank-other">7</div>
+          <div class="lb-avatar" style="background:#fbeaf0;color:#d4537e">МТ</div>
+          <div><div class="lb-name">Мадина Тілеуова</div><div class="lb-city">Алматы</div></div>
+          <div style="text-align:right"><div class="lb-points">1 050</div><div class="lb-streak">ұпай</div></div>
+        </div>
+      </div>
+
+      <!-- HOW TO EARN POINTS -->
+      <div style="background:var(--white);border-radius:var(--radius-md);border:1px solid rgba(90,158,110,0.12);box-shadow:var(--shadow-sm);overflow:hidden">
+        <div style="padding:16px 20px;border-bottom:1px solid var(--green-mist);font-size:14px;font-weight:700;color:var(--green-dark)">⭐ Ұпай жинау жолдары</div>
+        <div style="padding:12px 20px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px">
+            <span style="color:var(--text-mid)">💧 Өсімдікті суару</span>
+            <span style="font-weight:700;color:var(--green-main)">+10 ұпай</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px">
+            <span style="color:var(--text-mid)">🌱 Жаңа өсімдік қосу</span>
+            <span style="font-weight:700;color:var(--green-main)">+50 ұпай</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px">
+            <span style="color:var(--text-mid)">📸 Фото жарияланым</span>
+            <span style="font-weight:700;color:var(--green-main)">+20 ұпай</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px">
+            <span style="color:var(--text-mid)">🔥 7 күндік серия</span>
+            <span style="font-weight:700;color:#f59e0b">+100 ұпай</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px">
+            <span style="color:var(--text-mid)">📰 Мақала жариялау</span>
+            <span style="font-weight:700;color:var(--green-main)">+80 ұпай</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px">
+            <span style="color:var(--text-mid)">🏆 Топта №1 болу</span>
+            <span style="font-weight:700;color:#d97706">+500 ұпай</span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon">🌱</div><span class="nav-logo-text" style="color:white">ЖасылБақ</span></a>
+      <p>Қазақстанның өсімдіктер мониторинг платформасы.</p>
+    </div>
+    <div class="footer-col"><h4>Бөлімдер</h4><ul>
+      <li><a href="monitoring.html">Мониторинг</a></li>
+      <li><a href="community.html">Қоғамдастық</a></li>
+      <li><a href="store.html">Дүкен</a></li>
+      <li><a href="news.html">Жаңалықтар</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Байланыс</h4><ul><li><a href="#">info@jasylbaq.kz</a></li></ul></div>
+    <div class="footer-col"></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 ЖасылБақ.</span><span>Қазақстанда жасалған 🇰🇿</span></div>
+</footer>
+
+<script>
+  document.querySelectorAll('.lb-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.lb-tab').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

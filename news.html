@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Жаңалықтар — ЖасылБақ</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .news-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 2rem;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 32px;
+    }
+
+    /* FEATURED */
+    .featured-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(90,158,110,0.12);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .featured-img {
+      background: linear-gradient(145deg, var(--green-mid), var(--green-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      min-height: 280px;
+    }
+    .featured-body { padding: 32px; display: flex; flex-direction: column; justify-content: center; }
+    .featured-tag { margin-bottom: 14px; }
+    .featured-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .featured-excerpt {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .author-avatar {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700;
+    }
+    .author-name { font-size: 13px; font-weight: 600; color: var(--text-dark); }
+    .article-date { font-size: 12px; color: var(--text-light); }
+    .read-time { font-size: 12px; color: var(--text-light); }
+
+    /* FILTERS */
+    .news-filters {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .news-filter-tab {
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1.5px solid var(--green-pale);
+      background: transparent;
+      color: var(--text-mid);
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      transition: all 0.2s;
+    }
+    .news-filter-tab.active, .news-filter-tab:hover {
+      background: var(--green-main);
+      color: white;
+      border-color: var(--green-main);
+    }
+
+    /* ARTICLE CARD */
+    .article-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(90,158,110,0.1);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      display: flex;
+      gap: 0;
+      transition: all 0.3s;
+    }
+    .article-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .article-thumb {
+      width: 120px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 44px;
+    }
+    .article-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+    .article-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+    .article-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .article-excerpt {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .article-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .article-actions { display: flex; gap: 12px; }
+    .action-btn {
+      background: none;
+      border: none;
+      font-size: 13px;
+      color: var(--text-light);
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.15s;
+      padding: 0;
+    }
+    .action-btn:hover { color: var(--green-main); }
+    .action-btn.liked { color: #ef4444; }
+
+    /* WRITE ARTICLE */
+    .write-card {
+      background: linear-gradient(135deg, var(--green-mist), var(--earth-pale));
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border: 1px solid rgba(90,158,110,0.15);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .write-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--green-main);
+      color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .write-input {
+      flex: 1;
+      padding: 10px 16px;
+      border-radius: 50px;
+      border: 1.5px solid rgba(90,158,110,0.2);
+      background: white;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      color: var(--text-mid);
+      outline: none;
+      cursor: pointer;
+    }
+    .write-input:focus { border-color: var(--green-main); color: var(--text-dark); }
+
+    /* SIDEBAR */
+    .sidebar-widget {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(90,158,110,0.12);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .widget-header {
+      padding: 14px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--green-dark);
+      border-bottom: 1px solid var(--green-mist);
+      background: var(--green-mist);
+    }
+    .widget-body { padding: 14px 18px; }
+
+    .trending-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(90,158,110,0.07);
+      cursor: pointer;
+    }
+    .trending-item:last-child { border-bottom: none; }
+    .trending-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--green-pale);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 28px;
+    }
+    .trending-title { font-size: 13px; font-weight: 600; color: var(--text-dark); line-height: 1.4; }
+    .trending-meta { font-size: 11px; color: var(--text-light); margin-top: 3px; }
+
+    .tag-cloud { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag-pill {
+      padding: 5px 12px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tag-pill:hover { transform: translateY(-1px); }
+
+    .top-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(90,158,110,0.07);
+    }
+    .top-author:last-child { border-bottom: none; }
+    .top-author-info { flex: 1; }
+    .top-author-name { font-size: 13px; font-weight: 700; color: var(--text-dark); }
+    .top-author-stat { font-size: 11px; color: var(--text-light); margin-top: 1px; }
+    .follow-btn {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--green-main);
+      background: var(--green-mist);
+      border: none;
+      padding: 4px 10px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    @media (max-width: 900px) {
+      .news-layout { grid-template-columns: 1fr; }
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-img { min-height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🌱</div>
+    <div>
+      <span class="nav-logo-text">ЖасылБақ</span>
+      <span class="nav-logo-sub">Өсімдіктер мониторингі</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Басты бет</a></li>
+    <li><a href="monitoring.html">Мониторинг</a></li>
+    <li><a href="community.html">Қоғамдастық</a></li>
+    <li><a href="store.html">Дүкен</a></li>
+    <li><a href="news.html" class="active">Жаңалықтар</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-hero">
+    <div class="container">
+      <div class="section-label">Жаңалықтар мен мақалалар</div>
+      <h1 class="section-title">Білім, кеңес, тәжірибе</h1>
+      <p class="section-sub">Өсімдіктер туралы мақалалар, сарапшы кеңестері, қоғамдастық тәжірибелері — барлығы бір жерде.</p>
+    </div>
+  </div>
+
+  <div class="news-layout">
+    <!-- MAIN -->
+    <div>
+      <!-- WRITE -->
+      <div class="write-card">
+        <div class="write-avatar">👨‍🌾</div>
+        <input type="text" class="write-input" placeholder="Мақала немесе кеңес жазу..." />
+        <button class="btn btn-primary" style="white-space:nowrap">Жариялау</button>
+      </div>
+
+      <!-- FEATURED -->
+      <div class="featured-card">
+        <div class="featured-img">🌳</div>
+        <div class="featured-body">
+          <div class="featured-tag"><span class="badge badge-green">Таңдаулы мақала</span></div>
+          <div class="featured-title">Қазақстанда ағаш отырғызудың ең тиімді 5 тәсілі</div>
+          <div class="featured-excerpt">Климатымыз бен топырақ ерекшелігіне бейімделген ағаш отырғызу техникалары туралы сарапшылардың тәжірибесі мен ғылыми деректер негізінде жазылған толық нұсқаулық.</div>
+          <div class="article-meta">
+            <div class="author-avatar" style="background:var(--green-mist);color:var(--green-main)">АМ</div>
+            <div>
+              <div class="author-name">Айгүл Маратова</div>
+              <div class="article-date">12 сәуір 2025</div>
+            </div>
+            <span style="margin-left:auto" class="read-time">⏱ 8 мин</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FILTERS -->
+      <div class="news-filters">
+        <button class="news-filter-tab active">Барлығы</button>
+        <button class="news-filter-tab">Кеңестер</button>
+        <button class="news-filter-tab">Зерттеу</button>
+        <button class="news-filter-tab">Табыс тарихы</button>
+        <button class="news-filter-tab">Жаңадан бастаушы</button>
+        <button class="news-filter-tab">Жаңалық</button>
+      </div>
+
+      <!-- ARTICLES -->
+      <div style="display:flex;flex-direction:column;gap:16px">
+
+        <div class="article-card">
+          <div class="article-thumb" style="background:linear-gradient(145deg,#e8f5ec,#c5e5ce)">💧</div>
+          <div class="article-body">
+            <div class="article-tags">
+              <span class="tag">Кеңестер</span>
+              <span class="tag">Суару</span>
+            </div>
+            <div class="article-title">Үй өсімдіктерін дұрыс суарудың 7 ережесі</div>
+            <div class="article-excerpt">Артық суару — үй өсімдіктерінің 1-ші өлім себебі. Мамандар ұсынатын нақты кеңестермен өсімдіктеріңізді аман сақтаңыз.</div>
+            <div class="article-footer">
+              <div class="article-meta">
+                <div class="author-avatar" style="background:#e6f1fb;color:#185fa5">НС</div>
+                <div class="author-name">Нұрлан Сейтов</div>
+                <span class="article-date">10 сәуір · 5 мин</span>
+              </div>
+              <div class="article-actions">
+                <button class="action-btn" onclick="toggleLike(this)">❤️ 142</button>
+                <button class="action-btn">💬 28</button>
+                <button class="action-btn">🔖 Сақтау</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-thumb" style="background:linear-gradient(145deg,#fff8e6,#fdecc7)">☀️</div>
+          <div class="article-body">
+            <div class="article-tags">
+              <span class="tag">Зерттеу</span>
+              <span class="tag">Жарық</span>
+            </div>
+            <div class="article-title">Өсімдіктерге қажетті жарық мөлшері: ғылыми зерттеу нәтижелері</div>
+            <div class="article-excerpt">Алматы университетінің ботаника кафедрасы 50 түрлі үй өсімдігімен жүргізген зерттеу нәтижелері жарияланды.</div>
+            <div class="article-footer">
+              <div class="article-meta">
+                <div class="author-avatar" style="background:var(--green-mist);color:var(--green-main)">ЗА</div>
+                <div class="author-name">Зарина Ахметова</div>
+                <span class="article-date">8 сәуір · 12 мин</span>
+              </div>
+              <div class="article-actions">
+                <button class="action-btn" onclick="toggleLike(this)">❤️ 89</button>
+                <button class="action-btn">💬 15</button>
+                <button class="action-btn">🔖 Сақтау</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-thumb" style="background:linear-gradient(145deg,#fbeaf0,#f5c8d8)">🌸</div>
+          <div class="article-body">
+            <div class="article-tags">
+              <span class="tag">Табыс тарихы</span>
+            </div>
+            <div class="article-title">Балконымда 30 гүл өсірдім: менің тәжірибем</div>
+            <div class="article-excerpt">Алматылық тұрғын Дина Серікова балконда гүл өсіру сапарын бастағанына 2 жыл болды. Ол өз тәжірибесімен бөлісті.</div>
+            <div class="article-footer">
+              <div class="article-meta">
+                <div class="author-avatar" style="background:#fbeaf0;color:#d4537e">ДС</div>
+                <div class="author-name">Дина Серікова</div>
+                <span class="article-date">5 сәуір · 7 мин</span>
+              </div>
+              <div class="article-actions">
+                <button class="action-btn" onclick="toggleLike(this)">❤️ 214</button>
+                <button class="action-btn">💬 47</button>
+                <button class="action-btn">🔖 Сақтау</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-thumb" style="background:linear-gradient(145deg,#e8f5ec,#c5e5ce)">🌱</div>
+          <div class="article-body">
+            <div class="article-tags">
+              <span class="tag">Жаңадан бастаушы</span>
+              <span class="tag">Кеңестер</span>
+            </div>
+            <div class="article-title">Өсімдік өсіру туралы жаңадан бастаушыларға 10 кеңес</div>
+            <div class="article-excerpt">Бірінші өсімдігіңізді сатып алдыңыз бірақ не істерге білмейсіз бе? Бұл мақала дәл сіз үшін жазылды.</div>
+            <div class="article-footer">
+              <div class="article-meta">
+                <div class="author-avatar" style="background:var(--green-mist);color:var(--green-main)">БД</div>
+                <div class="author-name">Болат Дүйсенов</div>
+                <span class="article-date">3 сәуір · 6 мин</span>
+              </div>
+              <div class="article-actions">
+                <button class="action-btn" onclick="toggleLike(this)">❤️ 176</button>
+                <button class="action-btn">💬 33</button>
+                <button class="action-btn">🔖 Сақтау</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-thumb" style="background:linear-gradient(145deg,#f5ece0,#eddcc8)">🍂</div>
+          <div class="article-body">
+            <div class="article-tags">
+              <span class="tag">Жаңалық</span>
+            </div>
+            <div class="article-title">Алматы 2025: 100 000 ағаш отырғызу жоспары жарияланды</div>
+            <div class="article-excerpt">Алматы қалалық әкімшілігі 2025 жылы 100 мың ағаш отырғызу жоспарын ресми жариялады. ЖасылБақ та бұл бастамаға қолдау береді.</div>
+            <div class="article-footer">
+              <div class="article-meta">
+                <div class="author-avatar" style="background:#e8f5ec;color:var(--green-main)">ЖБ</div>
+                <div class="author-name">ЖасылБақ редакциясы</div>
+                <span class="article-date">1 сәуір · 3 мин</span>
+              </div>
+              <div class="article-actions">
+                <button class="action-btn" onclick="toggleLike(this)">❤️ 312</button>
+                <button class="action-btn">💬 68</button>
+                <button class="action-btn">🔖 Сақтау</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside>
+      <div class="sidebar-widget">
+        <div class="widget-header">🔥 Тренд мақалалар</div>
+        <div class="widget-body">
+          <div class="trending-item">
+            <div class="trending-num">01</div>
+            <div><div class="trending-title">Қазақстанда ағаш отырғызудың 5 тәсілі</div><div class="trending-meta">2.1K оқырман · 8 мин</div></div>
+          </div>
+          <div class="trending-item">
+            <div class="trending-num">02</div>
+            <div><div class="trending-title">Үй өсімдіктерін суарудың 7 ережесі</div><div class="trending-meta">1.4K оқырман · 5 мин</div></div>
+          </div>
+          <div class="trending-item">
+            <div class="trending-num">03</div>
+            <div><div class="trending-title">Балконымда 30 гүл өсірдім</div><div class="trending-meta">980 оқырман · 7 мин</div></div>
+          </div>
+          <div class="trending-item">
+            <div class="trending-num">04</div>
+            <div><div class="trending-title">Алматы 100 000 ағаш жоспары</div><div class="trending-meta">870 оқырман · 3 мин</div></div>
+          </div>
+          <div class="trending-item">
+            <div class="trending-num">05</div>
+            <div><div class="trending-title">Смарт сенсорлармен бақылау</div><div class="trending-meta">640 оқырман · 9 мин</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-header">🏷️ Тақырыптар</div>
+        <div class="widget-body">
+          <div class="tag-cloud">
+            <span class="tag-pill" style="background:var(--green-mist);color:var(--green-main)">Суару</span>
+            <span class="tag-pill" style="background:#fff8e6;color:#b8860b">Топырақ</span>
+            <span class="tag-pill" style="background:#e6f1fb;color:#185fa5">Зерттеу</span>
+            <span class="tag-pill" style="background:#fbeaf0;color:#d4537e">Гүлдер</span>
+            <span class="tag-pill" style="background:var(--earth-pale);color:var(--earth-mid)">Ағаш</span>
+            <span class="tag-pill" style="background:var(--green-mist);color:var(--green-main)">Кеңес</span>
+            <span class="tag-pill" style="background:#fff8e6;color:#b8860b">Сенсор</span>
+            <span class="tag-pill" style="background:#f5ece0;color:#7a5c3d">Органика</span>
+            <span class="tag-pill" style="background:var(--green-mist);color:var(--green-main)">Балкон</span>
+            <span class="tag-pill" style="background:#e6f1fb;color:#185fa5">Жаңалық</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-header">✍️ Үздік авторлар</div>
+        <div class="widget-body">
+          <div class="top-author">
+            <div class="author-avatar" style="background:var(--green-mist);color:var(--green-main);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">АМ</div>
+            <div class="top-author-info">
+              <div class="top-author-name">Айгүл Маратова</div>
+              <div class="top-author-stat">14 мақала · 4.2K оқырман</div>
+            </div>
+            <button class="follow-btn">Жазылу</button>
+          </div>
+          <div class="top-author">
+            <div class="author-avatar" style="background:#e6f1fb;color:#185fa5;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">НС</div>
+            <div class="top-author-info">
+              <div class="top-author-name">Нұрлан Сейтов</div>
+              <div class="top-author-stat">9 мақала · 2.8K оқырман</div>
+            </div>
+            <button class="follow-btn">Жазылу</button>
+          </div>
+          <div class="top-author">
+            <div class="author-avatar" style="background:#fbeaf0;color:#d4537e;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">ДС</div>
+            <div class="top-author-info">
+              <div class="top-author-name">Дина Серікова</div>
+              <div class="top-author-stat">7 мақала · 1.9K оқырман</div>
+            </div>
+            <button class="follow-btn">Жазылу</button>
+          </div>
+          <div class="top-author">
+            <div class="author-avatar" style="background:#fff8e6;color:#b8860b;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">ЗА</div>
+            <div class="top-author-info">
+              <div class="top-author-name">Зарина Ахметова</div>
+              <div class="top-author-stat">11 мақала · 3.1K оқырман</div>
+            </div>
+            <button class="follow-btn">Жазылу</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon">🌱</div><span class="nav-logo-text" style="color:white">ЖасылБақ</span></a>
+      <p>Қазақстанның өсімдіктер мониторинг платформасы.</p>
+    </div>
+    <div class="footer-col"><h4>Бөлімдер</h4><ul>
+      <li><a href="monitoring.html">Мониторинг</a></li>
+      <li><a href="community.html">Қоғамдастық</a></li>
+      <li><a href="store.html">Дүкен</a></li>
+      <li><a href="news.html">Жаңалықтар</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Байланыс</h4><ul><li><a href="#">info@jasylbaq.kz</a></li></ul></div>
+    <div class="footer-col"></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 ЖасылБақ.</span><span>Қазақстанда жасалған 🇰🇿</span></div>
+</footer>
+
+<script>
+  function toggleLike(btn) {
+    btn.classList.toggle('liked');
+    const parts = btn.textContent.split(' ');
+    const num = parseInt(parts[1]);
+    btn.textContent = btn.classList.contains('liked') ? `❤️ ${num + 1}` : `❤️ ${num - 1}`;
+  }
+  document.querySelectorAll('.news-filter-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.news-filter-tab').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
