@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="kk">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,15 +15,22 @@
       grid-template-columns: 240px 1fr;
       gap: 28px;
     }
+
     /* FILTER SIDEBAR */
-    .filter-sidebar { display: flex; flex-direction: column; gap: 20px; }
+    .filter-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
     .filter-panel {
       background: var(--white);
       border-radius: var(--radius-md);
-      border: 1px solid rgba(90,158,110,0.12);
+      border: 1px solid rgba(90, 158, 110, 0.12);
       box-shadow: var(--shadow-sm);
       overflow: hidden;
     }
+
     .filter-panel-header {
       padding: 14px 18px;
       font-size: 13px;
@@ -31,7 +39,11 @@
       border-bottom: 1px solid var(--green-mist);
       background: var(--green-mist);
     }
-    .filter-panel-body { padding: 14px 18px; }
+
+    .filter-panel-body {
+      padding: 14px 18px;
+    }
+
     .filter-option {
       display: flex;
       align-items: center;
@@ -43,24 +55,51 @@
       border-radius: 6px;
       transition: color 0.15s;
     }
-    .filter-option:hover { color: var(--green-main); }
-    .filter-option input[type="checkbox"] { accent-color: var(--green-main); width: 15px; height: 15px; }
-    .filter-option.active { color: var(--green-main); font-weight: 700; }
-    .price-range { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+
+    .filter-option:hover {
+      color: var(--green-main);
+    }
+
+    .filter-option input[type="checkbox"] {
+      accent-color: var(--green-main);
+      width: 15px;
+      height: 15px;
+    }
+
+    .filter-option.active {
+      color: var(--green-main);
+      font-weight: 700;
+    }
+
+    .price-range {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 8px;
+    }
+
     .price-input {
       width: 80px;
       padding: 6px 10px;
-      border: 1.5px solid rgba(90,158,110,0.25);
+      border: 1.5px solid rgba(90, 158, 110, 0.25);
       border-radius: var(--radius-sm);
       font-size: 13px;
       font-family: 'Nunito', sans-serif;
       outline: none;
       color: var(--text-dark);
     }
-    .price-input:focus { border-color: var(--green-main); }
+
+    .price-input:focus {
+      border-color: var(--green-main);
+    }
 
     /* STORE MAIN */
-    .store-main { display: flex; flex-direction: column; gap: 24px; }
+    .store-main {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
     .store-header {
       display: flex;
       align-items: center;
@@ -68,17 +107,19 @@
       flex-wrap: wrap;
       gap: 12px;
     }
+
     .search-bar {
       display: flex;
       align-items: center;
       gap: 0;
       background: var(--white);
-      border: 1.5px solid rgba(90,158,110,0.25);
+      border: 1.5px solid rgba(90, 158, 110, 0.25);
       border-radius: 50px;
       overflow: hidden;
       flex: 1;
       max-width: 400px;
     }
+
     .search-bar input {
       border: none;
       padding: 10px 16px;
@@ -89,6 +130,7 @@
       background: transparent;
       color: var(--text-dark);
     }
+
     .search-bar button {
       background: var(--green-main);
       border: none;
@@ -97,9 +139,10 @@
       font-size: 15px;
       cursor: pointer;
     }
+
     .sort-select {
       padding: 8px 14px;
-      border: 1.5px solid rgba(90,158,110,0.25);
+      border: 1.5px solid rgba(90, 158, 110, 0.25);
       border-radius: 50px;
       font-family: 'Nunito', sans-serif;
       font-size: 13px;
@@ -110,7 +153,12 @@
     }
 
     /* CATEGORY TABS */
-    .cat-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+    .cat-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
     .cat-tab {
       padding: 8px 16px;
       border-radius: 50px;
@@ -122,27 +170,41 @@
       cursor: pointer;
       font-family: 'Nunito', sans-serif;
       transition: all 0.2s;
-      display: flex; align-items: center; gap: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-    .cat-tab.active, .cat-tab:hover {
+
+    .cat-tab.active,
+    .cat-tab:hover {
       background: var(--green-main);
       color: white;
       border-color: var(--green-main);
     }
 
     /* PRODUCT GRID */
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
     .product-card {
       background: var(--white);
       border-radius: var(--radius-md);
-      border: 1px solid rgba(90,158,110,0.1);
+      border: 1px solid rgba(90, 158, 110, 0.1);
       box-shadow: var(--shadow-sm);
       overflow: hidden;
       transition: all 0.3s;
       display: flex;
       flex-direction: column;
     }
-    .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
     .product-img {
       height: 160px;
       display: flex;
@@ -151,6 +213,7 @@
       font-size: 64px;
       position: relative;
     }
+
     .product-badge-wrap {
       position: absolute;
       top: 10px;
@@ -159,13 +222,55 @@
       flex-direction: column;
       gap: 4px;
     }
-    .product-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
-    .product-category { font-size: 11px; color: var(--text-light); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
-    .product-name { font-size: 15px; font-weight: 700; color: var(--green-dark); line-height: 1.3; margin-bottom: 6px; }
-    .product-desc { font-size: 12px; color: var(--text-mid); line-height: 1.5; flex: 1; }
-    .product-stars { display: flex; align-items: center; gap: 4px; margin-top: 10px; }
-    .stars { color: #f59e0b; font-size: 13px; }
-    .review-count { font-size: 11px; color: var(--text-light); }
+
+    .product-body {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-category {
+      font-size: 11px;
+      color: var(--text-light);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .product-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .product-desc {
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .product-stars {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 10px;
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 13px;
+    }
+
+    .review-count {
+      font-size: 11px;
+      color: var(--text-light);
+    }
+
     .product-footer {
       padding: 12px 16px;
       border-top: 1px solid var(--green-mist);
@@ -173,10 +278,23 @@
       align-items: center;
       justify-content: space-between;
     }
-    .product-price { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--green-dark); }
-    .product-price-sub { font-size: 11px; color: var(--text-light); font-family: 'Nunito', sans-serif; }
+
+    .product-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+
+    .product-price-sub {
+      font-size: 11px;
+      color: var(--text-light);
+      font-family: 'Nunito', sans-serif;
+    }
+
     .add-cart-btn {
-      width: 36px; height: 36px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: var(--green-main);
       border: none;
@@ -188,7 +306,11 @@
       justify-content: center;
       transition: all 0.2s;
     }
-    .add-cart-btn:hover { background: var(--green-dark); transform: scale(1.1); }
+
+    .add-cart-btn:hover {
+      background: var(--green-dark);
+      transform: scale(1.1);
+    }
 
     /* CART INDICATOR */
     .cart-btn {
@@ -211,333 +333,395 @@
       z-index: 500;
       transition: all 0.2s;
     }
-    .cart-btn:hover { background: var(--green-dark); transform: translateY(-2px); }
+
+    .cart-btn:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
     .cart-count {
       background: var(--accent);
       color: var(--earth-dark);
-      width: 24px; height: 24px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 13px;
       font-weight: 700;
     }
 
     @media (max-width: 900px) {
-      .store-layout { grid-template-columns: 1fr; }
-      .filter-sidebar { display: none; }
+      .store-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-sidebar {
+        display: none;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<nav>
-  <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon">🌱</div>
-    <div>
-      <span class="nav-logo-text">ЖасылБақ</span>
-      <span class="nav-logo-sub">Өсімдіктер мониторингі</span>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html">Басты бет</a></li>
-    <li><a href="monitoring.html">Мониторинг</a></li>
-    <li><a href="community.html">Қоғамдастық</a></li>
-    <li><a href="store.html" class="active">Дүкен</a></li>
-    <li><a href="news.html">Жаңалықтар</a></li>
-  </ul>
-</nav>
-
-<main>
-  <div class="page-hero">
-    <div class="container">
-      <div class="section-label">Дүкен</div>
-      <h1 class="section-title">Сенсорлар мен құрылғылар</h1>
-      <p class="section-sub">Өсімдіктеріңізді бақылауға арналған барлық смарт-құрылғыларды бір жерден табыңыз.</p>
-    </div>
-  </div>
-
-  <div class="store-layout">
-    <!-- FILTERS -->
-    <aside class="filter-sidebar">
-      <div class="filter-panel">
-        <div class="filter-panel-header">📂 Санат</div>
-        <div class="filter-panel-body">
-          <label class="filter-option active"><input type="checkbox" checked /> Барлығы <span style="margin-left:auto;font-size:11px;color:var(--text-light)">48</span></label>
-          <label class="filter-option"><input type="checkbox" /> Топырақ сенсорлары <span style="margin-left:auto;font-size:11px;color:var(--text-light)">12</span></label>
-          <label class="filter-option"><input type="checkbox" /> Суару жүйесі <span style="margin-left:auto;font-size:11px;color:var(--text-light)">8</span></label>
-          <label class="filter-option"><input type="checkbox" /> Жарық сенсоры <span style="margin-left:auto;font-size:11px;color:var(--text-light)">6</span></label>
-          <label class="filter-option"><input type="checkbox" /> Ауа сенсорлары <span style="margin-left:auto;font-size:11px;color:var(--text-light)">9</span></label>
-          <label class="filter-option"><input type="checkbox" /> Смарт-құмыралар <span style="margin-left:auto;font-size:11px;color:var(--text-light)">7</span></label>
-          <label class="filter-option"><input type="checkbox" /> Жиынтықтар <span style="margin-left:auto;font-size:11px;color:var(--text-light)">6</span></label>
-        </div>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">🌱</div>
+      <div>
+        <span class="nav-logo-text">ЖасылБақ</span>
+        <span class="nav-logo-sub">Өсімдіктер мониторингі</span>
       </div>
-
-      <div class="filter-panel">
-        <div class="filter-panel-header">💰 Баға (₸)</div>
-        <div class="filter-panel-body">
-          <div class="price-range">
-            <input type="number" class="price-input" placeholder="0" value="0" />
-            <span style="color:var(--text-light);font-size:13px">—</span>
-            <input type="number" class="price-input" placeholder="500 000" value="500000" />
-          </div>
-          <button class="btn btn-primary" style="width:100%;margin-top:12px;justify-content:center;padding:8px">Іздеу</button>
-        </div>
-      </div>
-
-      <div class="filter-panel">
-        <div class="filter-panel-header">⭐ Рейтинг</div>
-        <div class="filter-panel-body">
-          <label class="filter-option"><input type="checkbox" /> ⭐⭐⭐⭐⭐ 5 жұлдыз</label>
-          <label class="filter-option"><input type="checkbox" /> ⭐⭐⭐⭐ 4+</label>
-          <label class="filter-option"><input type="checkbox" /> ⭐⭐⭐ 3+</label>
-        </div>
-      </div>
-
-      <div class="filter-panel">
-        <div class="filter-panel-header">🔌 Байланыс</div>
-        <div class="filter-panel-body">
-          <label class="filter-option"><input type="checkbox" /> Wi-Fi</label>
-          <label class="filter-option"><input type="checkbox" /> Bluetooth</label>
-          <label class="filter-option"><input type="checkbox" /> Zigbee</label>
-          <label class="filter-option"><input type="checkbox" /> LoRa</label>
-          <label class="filter-option"><input type="checkbox" /> Сымды</label>
-        </div>
-      </div>
-    </aside>
-
-    <!-- MAIN -->
-    <div class="store-main">
-      <div class="store-header">
-        <div class="search-bar">
-          <input type="text" placeholder="Сенсор, құрылғы іздеу..." />
-          <button>🔍</button>
-        </div>
-        <select class="sort-select">
-          <option>Ең танымал</option>
-          <option>Арзаннан қымбатқа</option>
-          <option>Қымбаттан арзанға</option>
-          <option>Рейтинг бойынша</option>
-          <option>Жаңасы алдымен</option>
-        </select>
-      </div>
-
-      <div class="cat-tabs">
-        <button class="cat-tab active">🌿 Барлығы</button>
-        <button class="cat-tab">💧 Суару</button>
-        <button class="cat-tab">🌡️ Сенсорлар</button>
-        <button class="cat-tab">💡 Жарық</button>
-        <button class="cat-tab">🪴 Құмыралар</button>
-        <button class="cat-tab">📦 Жиынтықтар</button>
-      </div>
-
-      <div style="font-size:13px;color:var(--text-light)">48 өнім табылды</div>
-
-      <div class="product-grid">
-
-        <div class="product-card">
-          <div class="product-img" style="background:linear-gradient(145deg,#e8f5ec,#d4edd9)">
-            🌡️
-            <div class="product-badge-wrap">
-              <span class="badge badge-green">Бестселлер</span>
-            </div>
-          </div>
-          <div class="product-body">
-            <div class="product-category">Топырақ сенсоры</div>
-            <div class="product-name">SmartSoil Pro 3-in-1</div>
-            <div class="product-desc">Ылғалдылық, температура және қышқылдықты (pH) бір уақытта өлшейді. Wi-Fi арқылы телефонға деректер жібереді.</div>
-            <div class="product-stars">
-              <span class="stars">★★★★★</span>
-              <span class="review-count">(124 пікір)</span>
-            </div>
-          </div>
-          <div class="product-footer">
-            <div><div class="product-price">24 900₸</div><div class="product-price-sub">Тегін жеткізу</div></div>
-            <button class="add-cart-btn" onclick="addToCart(this)">+</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img" style="background:linear-gradient(145deg,#e6f1fb,#cce0f5)">
-            💧
-            <div class="product-badge-wrap">
-              <span class="badge" style="background:#fee2e2;color:#dc2626">-20%</span>
-            </div>
-          </div>
-          <div class="product-body">
-            <div class="product-category">Смарт суару</div>
-            <div class="product-name">AquaBot Mini Автоматты</div>
-            <div class="product-desc">Топырақтың ылғалдылығына байланысты автоматты суару. Батарейкамен жұмыс жасайды, 30 күнге дейін.</div>
-            <div class="product-stars">
-              <span class="stars">★★★★☆</span>
-              <span class="review-count">(89 пікір)</span>
-            </div>
-          </div>
-          <div class="product-footer">
-            <div>
-              <div class="product-price">18 500₸</div>
-              <div class="product-price-sub" style="text-decoration:line-through;color:#ef4444">23 000₸ болатын</div>
-            </div>
-            <button class="add-cart-btn" onclick="addToCart(this)">+</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img" style="background:linear-gradient(145deg,#fff8e6,#fdecc7)">🌞</div>
-          <div class="product-body">
-            <div class="product-category">Жарық сенсоры</div>
-            <div class="product-name">LuxMeter Bluetooth</div>
-            <div class="product-desc">Өсімдіктер үшін оңтайлы жарық деңгейін өлшейді. Смартфонмен Bluetooth байланысы.</div>
-            <div class="product-stars">
-              <span class="stars">★★★★☆</span>
-              <span class="review-count">(47 пікір)</span>
-            </div>
-          </div>
-          <div class="product-footer">
-            <div><div class="product-price">12 000₸</div><div class="product-price-sub">2-3 күнде жетеді</div></div>
-            <button class="add-cart-btn" onclick="addToCart(this)">+</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img" style="background:linear-gradient(145deg,#f5ece0,#eddcc8)">
-            🪴
-            <div class="product-badge-wrap">
-              <span class="badge badge-gold">Жаңа</span>
-            </div>
-          </div>
-          <div class="product-body">
-            <div class="product-category">Смарт құмыра</div>
-            <div class="product-name">EcoPlant Smart Pot XL</div>
-            <div class="product-desc">Ішінде кіріктірілген сенсорлар бар керамика құмыра. Дисплейде ылғалдылық пен температура.</div>
-            <div class="product-stars">
-              <span class="stars">★★★★★</span>
-              <span class="review-count">(31 пікір)</span>
-            </div>
-          </div>
-          <div class="product-footer">
-            <div><div class="product-price">45 000₸</div><div class="product-price-sub">Тегін жеткізу</div></div>
-            <button class="add-cart-btn" onclick="addToCart(this)">+</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img" style="background:linear-gradient(145deg,#e8f5ec,#c5e5ce)">🌬️</div>
-          <div class="product-body">
-            <div class="product-category">Ауа сенсоры</div>
-            <div class="product-name">AirGuard CO₂ & Ылғал</div>
-            <div class="product-desc">Бөлме ауасының ылғалдылығы мен CO₂ деңгейін бақылайды. Өсімдіктерге оңтайлы орта жасайды.</div>
-            <div class="product-stars">
-              <span class="stars">★★★★☆</span>
-              <span class="review-count">(56 пікір)</span>
-            </div>
-          </div>
-          <div class="product-footer">
-            <div><div class="product-price">31 000₸</div><div class="product-price-sub">Тегін жеткізу</div></div>
-            <button class="add-cart-btn" onclick="addToCart(this)">+</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img" style="background:linear-gradient(145deg,#fbeaf0,#f5c8d8)">
-            📦
-            <div class="product-badge-wrap">
-              <span class="badge badge-green">Жиынтық</span>
-            </div>
-          </div>
-          <div class="product-body">
-            <div class="product-category">Стартер жиынтық</div>
-            <div class="product-name">ЖасылБақ Бастаушы жинағы</div>
-            <div class="product-desc">SmartSoil + AquaBot Mini + LuxMeter жиынтығы. Жаңадан бастаушыларға арналған толық шешім.</div>
-            <div class="product-stars">
-              <span class="stars">★★★★★</span>
-              <span class="review-count">(208 пікір)</span>
-            </div>
-          </div>
-          <div class="product-footer">
-            <div><div class="product-price">49 900₸</div><div class="product-price-sub">55 900₸ орнына</div></div>
-            <button class="add-cart-btn" onclick="addToCart(this)">+</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img" style="background:linear-gradient(145deg,#e8f5ec,#d4edd9)">🔌</div>
-          <div class="product-body">
-            <div class="product-category">Смарт суару</div>
-            <div class="product-name">Drip System 8 Zone</div>
-            <div class="product-desc">8 аймаққа дейін автоматты тамшылатып суаруды басқарады. Wi-Fi + қолданба арқылы кесте.</div>
-            <div class="product-stars">
-              <span class="stars">★★★★☆</span>
-              <span class="review-count">(63 пікір)</span>
-            </div>
-          </div>
-          <div class="product-footer">
-            <div><div class="product-price">38 500₸</div><div class="product-price-sub">2-3 күнде жетеді</div></div>
-            <button class="add-cart-btn" onclick="addToCart(this)">+</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img" style="background:linear-gradient(145deg,#fff8e6,#fdecc7)">☀️</div>
-          <div class="product-body">
-            <div class="product-category">Өсімдік шамы</div>
-            <div class="product-name">GrowLight LED Full Spectrum</div>
-            <div class="product-desc">Табиғи күн сәулесін имитациялайтын толық спектрлі LED шам. Таймер функциясы бар.</div>
-            <div class="product-stars">
-              <span class="stars">★★★★★</span>
-              <span class="review-count">(92 пікір)</span>
-            </div>
-          </div>
-          <div class="product-footer">
-            <div><div class="product-price">22 000₸</div><div class="product-price-sub">Тегін жеткізу</div></div>
-            <button class="add-cart-btn" onclick="addToCart(this)">+</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</main>
-
-<!-- CART BUTTON -->
-<button class="cart-btn" id="cartBtn" style="display:none">
-  🛒 Себет
-  <div class="cart-count" id="cartCount">0</div>
-</button>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="index.html" class="nav-logo"><div class="nav-logo-icon">🌱</div><span class="nav-logo-text" style="color:white">ЖасылБақ</span></a>
-      <p>Қазақстанның өсімдіктер мониторинг платформасы.</p>
-    </div>
-    <div class="footer-col"><h4>Бөлімдер</h4><ul>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Басты бет</a></li>
       <li><a href="monitoring.html">Мониторинг</a></li>
       <li><a href="community.html">Қоғамдастық</a></li>
-      <li><a href="store.html">Дүкен</a></li>
+      <li><a href="store.html" class="active">Дүкен</a></li>
       <li><a href="news.html">Жаңалықтар</a></li>
-    </ul></div>
-    <div class="footer-col"><h4>Байланыс</h4><ul><li><a href="#">info@jasylbaq.kz</a></li></ul></div>
-    <div class="footer-col"></div>
-  </div>
-  <div class="footer-bottom"><span>© 2026 ЖасылБақ.</span><span>Қазақстанда жасалған 🇰🇿</span></div>
-</footer>
+    </ul>
+  </nav>
 
-<script>
-  let cartCount = 0;
-  function addToCart(btn) {
-    cartCount++;
-    document.getElementById('cartCount').textContent = cartCount;
-    document.getElementById('cartBtn').style.display = 'flex';
-    btn.textContent = '✓';
-    btn.style.background = '#22c55e';
-    setTimeout(() => { btn.textContent = '+'; btn.style.background = ''; }, 1500);
-  }
-  document.querySelectorAll('.cat-tab').forEach(tab => {
-    tab.addEventListener('click', function() {
-      document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
-      this.classList.add('active');
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <div class="section-label">Дүкен</div>
+        <h1 class="section-title">Сенсорлар мен құрылғылар</h1>
+        <p class="section-sub">Өсімдіктеріңізді бақылауға арналған барлық смарт-құрылғыларды бір жерден табыңыз.</p>
+      </div>
+    </div>
+
+    <div class="store-layout">
+      <!-- FILTERS -->
+      <aside class="filter-sidebar">
+        <div class="filter-panel">
+          <div class="filter-panel-header">📂 Санат</div>
+          <div class="filter-panel-body">
+            <label class="filter-option active"><input type="checkbox" checked /> Барлығы <span
+                style="margin-left:auto;font-size:11px;color:var(--text-light)">0</span></label>
+            <label class="filter-option"><input type="checkbox" /> Топырақ сенсорлары <span
+                style="margin-left:auto;font-size:11px;color:var(--text-light)">12</span></label>
+            <label class="filter-option"><input type="checkbox" /> Суару жүйесі <span
+                style="margin-left:auto;font-size:11px;color:var(--text-light)">8</span></label>
+            <label class="filter-option"><input type="checkbox" /> Жарық сенсоры <span
+                style="margin-left:auto;font-size:11px;color:var(--text-light)">6</span></label>
+            <label class="filter-option"><input type="checkbox" /> Ауа сенсорлары <span
+                style="margin-left:auto;font-size:11px;color:var(--text-light)">9</span></label>
+            <label class="filter-option"><input type="checkbox" /> Смарт-құмыралар <span
+                style="margin-left:auto;font-size:11px;color:var(--text-light)">7</span></label>
+            <label class="filter-option"><input type="checkbox" /> Жиынтықтар <span
+                style="margin-left:auto;font-size:11px;color:var(--text-light)">6</span></label>
+          </div>
+        </div>
+
+        <div class="filter-panel">
+          <div class="filter-panel-header">💰 Баға (₸)</div>
+          <div class="filter-panel-body">
+            <div class="price-range">
+              <input type="number" class="price-input" placeholder="0" value="0" />
+              <span style="color:var(--text-light);font-size:13px">—</span>
+              <input type="number" class="price-input" placeholder="500 000" value="500000" />
+            </div>
+            <button class="btn btn-primary"
+              style="width:100%;margin-top:12px;justify-content:center;padding:8px">Іздеу</button>
+          </div>
+        </div>
+
+        <div class="filter-panel">
+          <div class="filter-panel-header">⭐ Рейтинг</div>
+          <div class="filter-panel-body">
+            <label class="filter-option"><input type="checkbox" /> ⭐⭐⭐⭐⭐ 5 жұлдыз</label>
+            <label class="filter-option"><input type="checkbox" /> ⭐⭐⭐⭐ 4+</label>
+            <label class="filter-option"><input type="checkbox" /> ⭐⭐⭐ 3+</label>
+          </div>
+        </div>
+
+        <div class="filter-panel">
+          <div class="filter-panel-header">🔌 Байланыс</div>
+          <div class="filter-panel-body">
+            <label class="filter-option"><input type="checkbox" /> Wi-Fi</label>
+            <label class="filter-option"><input type="checkbox" /> Bluetooth</label>
+            <label class="filter-option"><input type="checkbox" /> Zigbee</label>
+            <label class="filter-option"><input type="checkbox" /> LoRa</label>
+            <label class="filter-option"><input type="checkbox" /> Сымды</label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <div class="store-main">
+        <div class="store-header">
+          <div class="search-bar">
+            <input type="text" placeholder="Сенсор, құрылғы іздеу..." />
+            <button>🔍</button>
+          </div>
+          <select class="sort-select">
+            <option>Ең танымал</option>
+            <option>Арзаннан қымбатқа</option>
+            <option>Қымбаттан арзанға</option>
+            <option>Рейтинг бойынша</option>
+            <option>Жаңасы алдымен</option>
+          </select>
+        </div>
+
+        <div class="cat-tabs">
+          <button class="cat-tab active">🌿 Барлығы</button>
+          <button class="cat-tab">💧 Суару</button>
+          <button class="cat-tab">🌡️ Сенсорлар</button>
+          <button class="cat-tab">💡 Жарық</button>
+          <button class="cat-tab">🪴 Құмыралар</button>
+          <button class="cat-tab">📦 Жиынтықтар</button>
+        </div>
+
+        <div style="font-size:13px;color:var(--text-light)">0 өнім табылды</div>
+
+        <div class="product-grid">
+
+          <div class="product-card">
+            <div class="product-img" style="background:linear-gradient(145deg,#e8f5ec,#d4edd9)">
+              🌡️
+              <div class="product-badge-wrap">
+                <span class="badge badge-green">Бестселлер</span>
+              </div>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Топырақ сенсоры</div>
+              <div class="product-name">SmartSoil Pro 3-in-1</div>
+              <div class="product-desc">Ылғалдылық, температура және қышқылдықты (pH) бір уақытта өлшейді. Wi-Fi арқылы
+                телефонға деректер жібереді.</div>
+              <div class="product-stars">
+                <span class="stars">★★★★★</span>
+                <span class="review-count">(124 пікір)</span>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div>
+                <div class="product-price">24 900₸</div>
+                <div class="product-price-sub">Тегін жеткізу</div>
+              </div>
+              <button class="add-cart-btn" onclick="addToCart(this)">+</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img" style="background:linear-gradient(145deg,#e6f1fb,#cce0f5)">
+              💧
+              <div class="product-badge-wrap">
+                <span class="badge" style="background:#fee2e2;color:#dc2626">-20%</span>
+              </div>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Смарт суару</div>
+              <div class="product-name">AquaBot Mini Автоматты</div>
+              <div class="product-desc">Топырақтың ылғалдылығына байланысты автоматты суару. Батарейкамен жұмыс жасайды,
+                30 күнге дейін.</div>
+              <div class="product-stars">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(89 пікір)</span>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div>
+                <div class="product-price">18 500₸</div>
+                <div class="product-price-sub" style="text-decoration:line-through;color:#ef4444">23 000₸ болатын</div>
+              </div>
+              <button class="add-cart-btn" onclick="addToCart(this)">+</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img" style="background:linear-gradient(145deg,#fff8e6,#fdecc7)">🌞</div>
+            <div class="product-body">
+              <div class="product-category">Жарық сенсоры</div>
+              <div class="product-name">LuxMeter Bluetooth</div>
+              <div class="product-desc">Өсімдіктер үшін оңтайлы жарық деңгейін өлшейді. Смартфонмен Bluetooth байланысы.
+              </div>
+              <div class="product-stars">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(47 пікір)</span>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div>
+                <div class="product-price">12 000₸</div>
+                <div class="product-price-sub">2-3 күнде жетеді</div>
+              </div>
+              <button class="add-cart-btn" onclick="addToCart(this)">+</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img" style="background:linear-gradient(145deg,#f5ece0,#eddcc8)">
+              🪴
+              <div class="product-badge-wrap">
+                <span class="badge badge-gold">Жаңа</span>
+              </div>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Смарт құмыра</div>
+              <div class="product-name">EcoPlant Smart Pot XL</div>
+              <div class="product-desc">Ішінде кіріктірілген сенсорлар бар керамика құмыра. Дисплейде ылғалдылық пен
+                температура.</div>
+              <div class="product-stars">
+                <span class="stars">★★★★★</span>
+                <span class="review-count">(31 пікір)</span>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div>
+                <div class="product-price">45 000₸</div>
+                <div class="product-price-sub">Тегін жеткізу</div>
+              </div>
+              <button class="add-cart-btn" onclick="addToCart(this)">+</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img" style="background:linear-gradient(145deg,#e8f5ec,#c5e5ce)">🌬️</div>
+            <div class="product-body">
+              <div class="product-category">Ауа сенсоры</div>
+              <div class="product-name">AirGuard CO₂ & Ылғал</div>
+              <div class="product-desc">Бөлме ауасының ылғалдылығы мен CO₂ деңгейін бақылайды. Өсімдіктерге оңтайлы орта
+                жасайды.</div>
+              <div class="product-stars">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(56 пікір)</span>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div>
+                <div class="product-price">31 000₸</div>
+                <div class="product-price-sub">Тегін жеткізу</div>
+              </div>
+              <button class="add-cart-btn" onclick="addToCart(this)">+</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img" style="background:linear-gradient(145deg,#fbeaf0,#f5c8d8)">
+              📦
+              <div class="product-badge-wrap">
+                <span class="badge badge-green">Жиынтық</span>
+              </div>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Стартер жиынтық</div>
+              <div class="product-name">ЖасылБақ Бастаушы жинағы</div>
+              <div class="product-desc">SmartSoil + AquaBot Mini + LuxMeter жиынтығы. Жаңадан бастаушыларға арналған
+                толық шешім.</div>
+              <div class="product-stars">
+                <span class="stars">★★★★★</span>
+                <span class="review-count">(208 пікір)</span>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div>
+                <div class="product-price">49 900₸</div>
+                <div class="product-price-sub">55 900₸ орнына</div>
+              </div>
+              <button class="add-cart-btn" onclick="addToCart(this)">+</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img" style="background:linear-gradient(145deg,#e8f5ec,#d4edd9)">🔌</div>
+            <div class="product-body">
+              <div class="product-category">Смарт суару</div>
+              <div class="product-name">Drip System 8 Zone</div>
+              <div class="product-desc">8 аймаққа дейін автоматты тамшылатып суаруды басқарады. Wi-Fi + қолданба арқылы
+                кесте.</div>
+              <div class="product-stars">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(63 пікір)</span>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div>
+                <div class="product-price">38 500₸</div>
+                <div class="product-price-sub">2-3 күнде жетеді</div>
+              </div>
+              <button class="add-cart-btn" onclick="addToCart(this)">+</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img" style="background:linear-gradient(145deg,#fff8e6,#fdecc7)">☀️</div>
+            <div class="product-body">
+              <div class="product-category">Өсімдік шамы</div>
+              <div class="product-name">GrowLight LED Full Spectrum</div>
+              <div class="product-desc">Табиғи күн сәулесін имитациялайтын толық спектрлі LED шам. Таймер функциясы бар.
+              </div>
+              <div class="product-stars">
+                <span class="stars">★★★★★</span>
+                <span class="review-count">(92 пікір)</span>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div>
+                <div class="product-price">22 000₸</div>
+                <div class="product-price-sub">Тегін жеткізу</div>
+              </div>
+              <button class="add-cart-btn" onclick="addToCart(this)">+</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- CART BUTTON -->
+  <button class="cart-btn" id="cartBtn" style="display:none">
+    🛒 Себет
+    <div class="cart-count" id="cartCount">0</div>
+  </button>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-icon">🌱</div><span class="nav-logo-text" style="color:white">ЖасылБақ</span>
+        </a>
+        <p>Қазақстанның өсімдіктер мониторинг платформасы.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Бөлімдер</h4>
+        <ul>
+          <li><a href="monitoring.html">Мониторинг</a></li>
+          <li><a href="community.html">Қоғамдастық</a></li>
+          <li><a href="store.html">Дүкен</a></li>
+          <li><a href="news.html">Жаңалықтар</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Байланыс</h4>
+        <ul>
+          <li><a href="#">info@jasylbaq.kz</a></li>
+        </ul>
+      </div>
+      <div class="footer-col"></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 ЖасылБақ.</span><span>Қазақстанда жасалған 🇰🇿</span></div>
+  </footer>
+
+  <script>
+    let cartCount = 0;
+    function addToCart(btn) {
+      cartCount++;
+      document.getElementById('cartCount').textContent = cartCount;
+      document.getElementById('cartBtn').style.display = 'flex';
+      btn.textContent = '✓';
+      btn.style.background = '#22c55e';
+      setTimeout(() => { btn.textContent = '+'; btn.style.background = ''; }, 1500);
+    }
+    document.querySelectorAll('.cat-tab').forEach(tab => {
+      tab.addEventListener('click', function () {
+        document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+      });
     });
-  });
-</script>
+  </script>
 </body>
+
 </html>

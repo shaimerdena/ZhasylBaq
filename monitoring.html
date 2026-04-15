@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="kk">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,24 +15,39 @@
       margin: 0 auto;
       padding: 40px 2rem;
     }
+
     /* SIDEBAR */
-    .sidebar { display: flex; flex-direction: column; gap: 20px; }
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
     .sidebar-card {
       background: var(--white);
       border-radius: var(--radius-md);
-      border: 1px solid rgba(90,158,110,0.12);
+      border: 1px solid rgba(90, 158, 110, 0.12);
       box-shadow: var(--shadow-sm);
       overflow: hidden;
     }
+
     .sidebar-card-header {
       padding: 16px 20px;
-      border-bottom: 1px solid rgba(90,158,110,0.1);
+      border-bottom: 1px solid rgba(90, 158, 110, 0.1);
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .sidebar-card-title { font-size: 14px; font-weight: 700; color: var(--green-dark); }
-    .sidebar-card-body { padding: 16px 20px; }
+
+    .sidebar-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+
+    .sidebar-card-body {
+      padding: 16px 20px;
+    }
 
     /* WEATHER WIDGET */
     .weather-widget {
@@ -40,13 +56,49 @@
       padding: 20px;
       color: white;
     }
-    .weather-city { font-size: 12px; opacity: 0.7; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
-    .weather-temp { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; line-height: 1; margin: 8px 0; }
-    .weather-desc { font-size: 15px; opacity: 0.85; }
-    .weather-row { display: flex; gap: 20px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.15); }
-    .weather-item { font-size: 12px; }
-    .weather-item-val { font-weight: 700; font-size: 15px; }
-    .weather-item-label { opacity: 0.6; margin-top: 2px; }
+
+    .weather-city {
+      font-size: 12px;
+      opacity: 0.7;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .weather-temp {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 1;
+      margin: 8px 0;
+    }
+
+    .weather-desc {
+      font-size: 15px;
+      opacity: 0.85;
+    }
+
+    .weather-row {
+      display: flex;
+      gap: 20px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .weather-item {
+      font-size: 12px;
+    }
+
+    .weather-item-val {
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .weather-item-label {
+      opacity: 0.6;
+      margin-top: 2px;
+    }
 
     /* REMINDERS */
     .reminder-item {
@@ -56,23 +108,53 @@
       padding: 10px 0;
       border-bottom: 1px solid var(--green-mist);
     }
-    .reminder-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .reminder-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
     .reminder-icon {
-      width: 36px; height: 36px;
+      width: 36px;
+      height: 36px;
       border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 16px;
       flex-shrink: 0;
     }
-    .reminder-title { font-size: 13px; font-weight: 700; color: var(--text-dark); }
-    .reminder-time { font-size: 11px; color: var(--text-light); margin-top: 2px; }
-    .reminder-urgent { color: #dc2626; font-weight: 700; }
+
+    .reminder-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .reminder-time {
+      font-size: 11px;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    .reminder-urgent {
+      color: #dc2626;
+      font-weight: 700;
+    }
 
     /* MAIN CONTENT */
-    .main-content { display: flex; flex-direction: column; gap: 24px; }
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
 
     /* STATS ROW */
-    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
 
     /* ADD PLANT BUTTON */
     .add-plant-btn {
@@ -92,7 +174,11 @@
       gap: 8px;
       transition: all 0.2s;
     }
-    .add-plant-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+
+    .add-plant-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
 
     /* PLANT CARDS GRID */
     .plants-header {
@@ -102,7 +188,13 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-    .filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
     .filter-tab {
       padding: 6px 14px;
       border-radius: 50px;
@@ -115,50 +207,108 @@
       transition: all 0.2s;
       font-family: 'Nunito', sans-serif;
     }
-    .filter-tab.active, .filter-tab:hover {
+
+    .filter-tab.active,
+    .filter-tab:hover {
       background: var(--green-main);
       color: white;
       border-color: var(--green-main);
     }
-    .plants-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+
+    .plants-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
 
     .plant-card-detail {
       background: var(--white);
       border-radius: var(--radius-md);
-      border: 1px solid rgba(90,158,110,0.12);
+      border: 1px solid rgba(90, 158, 110, 0.12);
       box-shadow: var(--shadow-sm);
       overflow: hidden;
       transition: all 0.3s;
       cursor: pointer;
     }
-    .plant-card-detail:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+    .plant-card-detail:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
     .plant-card-top {
       padding: 20px 18px 14px;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
     }
-    .plant-big-icon { font-size: 36px; line-height: 1; }
+
+    .plant-big-icon {
+      font-size: 36px;
+      line-height: 1;
+    }
+
     .plant-status-dot {
-      width: 10px; height: 10px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       margin-top: 4px;
     }
-    .dot-green { background: #22c55e; }
-    .dot-yellow { background: #f59e0b; }
-    .dot-red { background: #ef4444; }
 
-    .plant-card-info { padding: 0 18px 18px; }
-    .plant-card-name { font-size: 15px; font-weight: 700; color: var(--green-dark); }
-    .plant-card-type { font-size: 12px; color: var(--text-light); margin-top: 2px; margin-bottom: 14px; }
-    .plant-mini-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+    .dot-green {
+      background: #22c55e;
+    }
+
+    .dot-yellow {
+      background: #f59e0b;
+    }
+
+    .dot-red {
+      background: #ef4444;
+    }
+
+    .plant-card-info {
+      padding: 0 18px 18px;
+    }
+
+    .plant-card-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+
+    .plant-card-type {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 2px;
+      margin-bottom: 14px;
+    }
+
+    .plant-mini-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
     .plant-mini-stat {
       background: var(--green-mist);
       border-radius: 8px;
       padding: 8px;
     }
-    .plant-mini-val { font-size: 14px; font-weight: 700; color: var(--green-dark); }
-    .plant-mini-label { font-size: 10px; color: var(--text-light); margin-top: 1px; }
+
+    .plant-mini-val {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+
+    .plant-mini-label {
+      font-size: 10px;
+      color: var(--text-light);
+      margin-top: 1px;
+    }
+
     .plant-health-label {
       font-size: 12px;
       font-weight: 600;
@@ -167,6 +317,7 @@
       display: flex;
       justify-content: space-between;
     }
+
     .plant-card-footer {
       padding: 12px 18px;
       background: var(--green-mist);
@@ -174,7 +325,13 @@
       justify-content: space-between;
       align-items: center;
     }
-    .plant-card-date { font-size: 11px; color: var(--text-light); font-weight: 600; }
+
+    .plant-card-date {
+      font-size: 11px;
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
     .plant-card-action {
       font-size: 12px;
       font-weight: 700;
@@ -186,10 +343,11 @@
     .chart-card {
       background: var(--white);
       border-radius: var(--radius-md);
-      border: 1px solid rgba(90,158,110,0.12);
+      border: 1px solid rgba(90, 158, 110, 0.12);
       box-shadow: var(--shadow-sm);
       padding: 24px;
     }
+
     .chart-header {
       display: flex;
       justify-content: space-between;
@@ -198,15 +356,34 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-    .chart-title { font-size: 16px; font-weight: 700; color: var(--green-dark); }
-    .chart-sub { font-size: 13px; color: var(--text-light); margin-top: 2px; }
+
+    .chart-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+
+    .chart-sub {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
     .chart-area {
       height: 160px;
       display: flex;
       align-items: flex-end;
       gap: 8px;
     }
-    .chart-bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+
+    .chart-bar-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
     .chart-bar {
       width: 100%;
       border-radius: 6px 6px 0 0;
@@ -214,21 +391,35 @@
       transition: height 0.6s ease;
       min-height: 4px;
     }
-    .chart-month { font-size: 11px; color: var(--text-light); font-weight: 600; }
-    .chart-val { font-size: 11px; color: var(--green-dark); font-weight: 700; }
+
+    .chart-month {
+      font-size: 11px;
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    .chart-val {
+      font-size: 11px;
+      color: var(--green-dark);
+      font-weight: 700;
+    }
 
     /* MODAL OVERLAY */
     .modal-overlay {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0, 0, 0, 0.4);
       z-index: 2000;
       align-items: center;
       justify-content: center;
       padding: 20px;
     }
-    .modal-overlay.open { display: flex; }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
     .modal {
       background: var(--white);
       border-radius: var(--radius-lg);
@@ -237,13 +428,31 @@
       max-width: 480px;
       box-shadow: var(--shadow-lg);
     }
-    .modal-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--green-dark); margin-bottom: 24px; }
-    .form-group { margin-bottom: 18px; }
-    .form-label { font-size: 13px; font-weight: 700; color: var(--text-mid); margin-bottom: 8px; display: block; }
+
+    .modal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-mid);
+      margin-bottom: 8px;
+      display: block;
+    }
+
     .form-input {
       width: 100%;
       padding: 10px 14px;
-      border: 1.5px solid rgba(90,158,110,0.25);
+      border: 1.5px solid rgba(90, 158, 110, 0.25);
       border-radius: var(--radius-sm);
       font-family: 'Nunito', sans-serif;
       font-size: 14px;
@@ -252,472 +461,564 @@
       outline: none;
       transition: border-color 0.2s;
     }
-    .form-input:focus { border-color: var(--green-main); background: white; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .modal-actions { display: flex; gap: 12px; margin-top: 24px; }
+
+    .form-input:focus {
+      border-color: var(--green-main);
+      background: white;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
 
     @media (max-width: 900px) {
-      .dashboard-layout { grid-template-columns: 1fr; }
-      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .dashboard-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
+
 <body>
 
-<nav>
-  <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon">🌱</div>
-    <div>
-      <span class="nav-logo-text">ЖасылБақ</span>
-      <span class="nav-logo-sub">Өсімдіктер мониторингі</span>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html">Басты бет</a></li>
-    <li><a href="monitoring.html" class="active">Мониторинг</a></li>
-    <li><a href="community.html">Қоғамдастық</a></li>
-    <li><a href="store.html">Дүкен</a></li>
-    <li><a href="news.html">Жаңалықтар</a></li>
-  </ul>
-</nav>
-
-<main>
-  <div class="page-hero">
-    <div class="container">
-      <div class="section-label">Мониторинг</div>
-      <h1 class="section-title">Менің бақшам</h1>
-      <p class="section-sub">Өсімдіктеріңізді тіркеп, олардың денсаулығын, ылғалдылығын және өсу динамикасын бақылаңыз.</p>
-    </div>
-  </div>
-
-  <div class="dashboard-layout">
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <!-- WEATHER -->
-      <div class="weather-widget">
-        <div class="weather-city">📍 Алматы, ҚЗ</div>
-        <div class="weather-temp">+18°</div>
-        <div class="weather-desc">☁️ Бұлтты, жаңбыр күтілмейді</div>
-        <div class="weather-row">
-          <div class="weather-item">
-            <div class="weather-item-val">62%</div>
-            <div class="weather-item-label">Ылғалдылық</div>
-          </div>
-          <div class="weather-item">
-            <div class="weather-item-val">12 км/с</div>
-            <div class="weather-item-label">Жел</div>
-          </div>
-          <div class="weather-item">
-            <div class="weather-item-val">UV 3</div>
-            <div class="weather-item-label">Күн сәулесі</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ADD PLANT -->
-      <button class="add-plant-btn" onclick="openModal()">
-        ＋ Жаңа өсімдік қосу
-      </button>
-
-      <!-- REMINDERS -->
-      <div class="sidebar-card">
-        <div class="sidebar-card-header">
-          <span class="sidebar-card-title">🔔 Еске салғыштар</span>
-          <span class="badge badge-green">4</span>
-        </div>
-        <div class="sidebar-card-body">
-          <div class="reminder-item">
-            <div class="reminder-icon" style="background:#fee2e2">💧</div>
-            <div>
-              <div class="reminder-title">Раушан гүлін суару</div>
-              <div class="reminder-time reminder-urgent">⚠ Мерзімі өтіп кетті!</div>
-            </div>
-          </div>
-          <div class="reminder-item">
-            <div class="reminder-icon" style="background:#e8f5ec">🌿</div>
-            <div>
-              <div class="reminder-title">Монстераны тексеру</div>
-              <div class="reminder-time">Бүгін, 18:00</div>
-            </div>
-          </div>
-          <div class="reminder-item">
-            <div class="reminder-icon" style="background:#fff8e6">🌱</div>
-            <div>
-              <div class="reminder-title">Шыршаға тыңайтқыш</div>
-              <div class="reminder-time">Ертең, 09:00</div>
-            </div>
-          </div>
-          <div class="reminder-item">
-            <div class="reminder-icon" style="background:#e8f5ec">✂️</div>
-            <div>
-              <div class="reminder-title">Алма ағашын кесу</div>
-              <div class="reminder-time">2 күннен кейін</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CALENDAR -->
-      <div class="sidebar-card">
-        <div class="sidebar-card-header">
-          <span class="sidebar-card-title">📅 Сәуір 2025</span>
-        </div>
-        <div class="sidebar-card-body">
-          <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center">
-            <div style="font-size:10px;color:var(--text-light);font-weight:700;padding:4px 0">Дс</div>
-            <div style="font-size:10px;color:var(--text-light);font-weight:700;padding:4px 0">Сс</div>
-            <div style="font-size:10px;color:var(--text-light);font-weight:700;padding:4px 0">Ср</div>
-            <div style="font-size:10px;color:var(--text-light);font-weight:700;padding:4px 0">Бс</div>
-            <div style="font-size:10px;color:var(--text-light);font-weight:700;padding:4px 0">Жм</div>
-            <div style="font-size:10px;color:var(--text-light);font-weight:700;padding:4px 0">Сб</div>
-            <div style="font-size:10px;color:var(--text-light);font-weight:700;padding:4px 0">Жс</div>
-            <div style="font-size:11px;color:var(--text-light);padding:5px 2px"></div>
-            <div style="font-size:11px;color:var(--text-light);padding:5px 2px"></div>
-            <div style="font-size:11px;color:var(--text-light);padding:5px 2px"></div>
-            <div style="font-size:11px;color:var(--text-light);padding:5px 2px">1</div>
-            <div style="font-size:11px;color:var(--text-light);padding:5px 2px">2</div>
-            <div style="font-size:11px;color:var(--text-light);padding:5px 2px">3</div>
-            <div style="font-size:11px;color:var(--text-light);padding:5px 2px">4</div>
-            <div style="font-size:11px;padding:5px 2px">5</div>
-            <div style="font-size:11px;padding:5px 2px">6</div>
-            <div style="font-size:11px;padding:5px 2px">7</div>
-            <div style="font-size:11px;padding:5px 2px">8</div>
-            <div style="font-size:11px;background:var(--green-mist);border-radius:6px;padding:5px 2px;font-weight:700;color:var(--green-main)">9</div>
-            <div style="font-size:11px;padding:5px 2px">10</div>
-            <div style="font-size:11px;padding:5px 2px">11</div>
-            <div style="font-size:11px;background:var(--green-main);border-radius:6px;padding:5px 2px;font-weight:700;color:white">12</div>
-            <div style="font-size:11px;padding:5px 2px">13</div>
-            <div style="font-size:11px;padding:5px 2px">14</div>
-            <div style="font-size:11px;padding:5px 2px">15</div>
-            <div style="font-size:11px;padding:5px 2px">16</div>
-            <div style="font-size:11px;padding:5px 2px">17</div>
-            <div style="font-size:11px;padding:5px 2px">18</div>
-            <div style="font-size:11px;background:var(--green-mist);border-radius:6px;padding:5px 2px;font-weight:700;color:var(--green-main)">19</div>
-            <div style="font-size:11px;padding:5px 2px">20</div>
-          </div>
-          <div style="margin-top:12px;font-size:12px;color:var(--text-light)">
-            <span style="display:inline-block;width:10px;height:10px;background:var(--green-main);border-radius:3px;margin-right:5px"></span>Бүгін
-            <span style="display:inline-block;width:10px;height:10px;background:var(--green-mist);border-radius:3px;margin-left:10px;margin-right:5px"></span>Іс-шара
-          </div>
-        </div>
-      </div>
-    </aside>
-
-    <!-- MAIN -->
-    <div class="main-content">
-      <!-- STATS -->
-      <div class="stats-row">
-        <div class="stat-card">
-          <div class="stat-value">24</div>
-          <div class="stat-label">Барлық өсімдік</div>
-          <div class="stat-change">↑ +2 осы айда</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" style="color:var(--green-main)">18</div>
-          <div class="stat-label">Дені сау</div>
-          <div class="stat-change">75% жалпы</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" style="color:#f59e0b">4</div>
-          <div class="stat-label">Назар қажет</div>
-          <div class="stat-change">↓ -1 кешеден</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" style="color:#ef4444">2</div>
-          <div class="stat-label">Шұғыл жағдай</div>
-          <div class="stat-change" style="color:#ef4444">Дереу шара керек</div>
-        </div>
-      </div>
-
-      <!-- GROWTH CHART -->
-      <div class="chart-card">
-        <div class="chart-header">
-          <div>
-            <div class="chart-title">📈 Өсімдік саны динамикасы</div>
-            <div class="chart-sub">2024 жылдан бері</div>
-          </div>
-          <select class="form-input" style="width:auto;padding:6px 12px;font-size:13px">
-            <option>2025</option>
-            <option>2024</option>
-          </select>
-        </div>
-        <div class="chart-area">
-          <div class="chart-bar-wrap"><div class="chart-val">8</div><div class="chart-bar" style="height:40%"></div><div class="chart-month">Қаң</div></div>
-          <div class="chart-bar-wrap"><div class="chart-val">10</div><div class="chart-bar" style="height:50%"></div><div class="chart-month">Ақп</div></div>
-          <div class="chart-bar-wrap"><div class="chart-val">12</div><div class="chart-bar" style="height:60%"></div><div class="chart-month">Нау</div></div>
-          <div class="chart-bar-wrap"><div class="chart-val">15</div><div class="chart-bar" style="height:75%"></div><div class="chart-month">Сәу</div></div>
-          <div class="chart-bar-wrap"><div class="chart-val">18</div><div class="chart-bar" style="height:90%"></div><div class="chart-month">Мам</div></div>
-          <div class="chart-bar-wrap"><div class="chart-val">20</div><div class="chart-bar" style="height:100%"></div><div class="chart-month">Мау</div></div>
-          <div class="chart-bar-wrap"><div class="chart-val">22</div><div class="chart-bar" style="height:110%;background:linear-gradient(180deg,var(--green-light),var(--green-main))"></div><div class="chart-month">Шіл</div></div>
-          <div class="chart-bar-wrap"><div class="chart-val">24</div><div class="chart-bar" style="height:120%"></div><div class="chart-month">Там</div></div>
-        </div>
-      </div>
-
-      <!-- PLANTS -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">🌱</div>
       <div>
-        <div class="plants-header">
-          <div>
-            <div style="font-size:16px;font-weight:700;color:var(--green-dark)">Менің өсімдіктерім</div>
-            <div style="font-size:13px;color:var(--text-light);margin-top:2px">24 өсімдік · 4 сектор</div>
-          </div>
-          <div class="filter-tabs">
-            <button class="filter-tab active">Барлығы</button>
-            <button class="filter-tab">Сау</button>
-            <button class="filter-tab">Ескерту</button>
-            <button class="filter-tab">Дабыл</button>
-          </div>
-        </div>
-        <div class="plants-grid" style="margin-top:16px">
-
-          <div class="plant-card-detail">
-            <div class="plant-card-top">
-              <div class="plant-big-icon">🍎</div>
-              <div class="plant-status-dot dot-green"></div>
-            </div>
-            <div class="plant-card-info">
-              <div class="plant-card-name">Алма ағашы</div>
-              <div class="plant-card-type">Жеміс ағашы · Сектор А-01</div>
-              <div class="plant-mini-stats">
-                <div class="plant-mini-stat">
-                  <div class="plant-mini-val">72%</div>
-                  <div class="plant-mini-label">💧 Ылғалдылық</div>
-                </div>
-                <div class="plant-mini-stat">
-                  <div class="plant-mini-val">22°C</div>
-                  <div class="plant-mini-label">🌡️ Температура</div>
-                </div>
-              </div>
-              <div class="plant-health-label"><span>Денсаулық</span><span style="color:var(--green-main)">92%</span></div>
-              <div class="health-bar-wrap"><div class="health-bar-fill" style="width:92%"></div></div>
-            </div>
-            <div class="plant-card-footer">
-              <span class="plant-card-date">Отырғызылды: 15.03.2022</span>
-              <span class="plant-card-action">Толығырақ →</span>
-            </div>
-          </div>
-
-          <div class="plant-card-detail" style="border-color:rgba(239,68,68,0.3)">
-            <div class="plant-card-top">
-              <div class="plant-big-icon">🌹</div>
-              <div class="plant-status-dot dot-red"></div>
-            </div>
-            <div class="plant-card-info">
-              <div class="plant-card-name">Раушан гүлі</div>
-              <div class="plant-card-type">Гүл · Сектор Б-03</div>
-              <div class="plant-mini-stats">
-                <div class="plant-mini-stat" style="background:#fee2e2">
-                  <div class="plant-mini-val" style="color:#dc2626">18%</div>
-                  <div class="plant-mini-label">💧 Ылғалдылық</div>
-                </div>
-                <div class="plant-mini-stat">
-                  <div class="plant-mini-val">26°C</div>
-                  <div class="plant-mini-label">🌡️ Температура</div>
-                </div>
-              </div>
-              <div class="plant-health-label"><span>Денсаулық</span><span style="color:#ef4444">34%</span></div>
-              <div class="health-bar-wrap"><div class="health-bar-fill" style="width:34%;background:linear-gradient(90deg,#ef4444,#f87171)"></div></div>
-            </div>
-            <div class="plant-card-footer" style="background:#fee2e2">
-              <span class="plant-card-date">Отырғызылды: 01.05.2024</span>
-              <span class="plant-card-action" style="color:#dc2626">Шара қабылдау →</span>
-            </div>
-          </div>
-
-          <div class="plant-card-detail" style="border-color:rgba(245,158,11,0.3)">
-            <div class="plant-card-top">
-              <div class="plant-big-icon">🌲</div>
-              <div class="plant-status-dot dot-yellow"></div>
-            </div>
-            <div class="plant-card-info">
-              <div class="plant-card-name">Шырша</div>
-              <div class="plant-card-type">Қылқан жапырақты · В-07</div>
-              <div class="plant-mini-stats">
-                <div class="plant-mini-stat" style="background:#fff8e6">
-                  <div class="plant-mini-val" style="color:#f59e0b">41%</div>
-                  <div class="plant-mini-label">💧 Ылғалдылық</div>
-                </div>
-                <div class="plant-mini-stat">
-                  <div class="plant-mini-val">19°C</div>
-                  <div class="plant-mini-label">🌡️ Температура</div>
-                </div>
-              </div>
-              <div class="plant-health-label"><span>Денсаулық</span><span style="color:#f59e0b">61%</span></div>
-              <div class="health-bar-wrap"><div class="health-bar-fill" style="width:61%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div>
-            </div>
-            <div class="plant-card-footer" style="background:#fff8e6">
-              <span class="plant-card-date">Отырғызылды: 10.11.2020</span>
-              <span class="plant-card-action" style="color:#f59e0b">Тексеру →</span>
-            </div>
-          </div>
-
-          <div class="plant-card-detail">
-            <div class="plant-card-top">
-              <div class="plant-big-icon">🪴</div>
-              <div class="plant-status-dot dot-green"></div>
-            </div>
-            <div class="plant-card-info">
-              <div class="plant-card-name">Монстера</div>
-              <div class="plant-card-type">Үй өсімдігі · Г-02</div>
-              <div class="plant-mini-stats">
-                <div class="plant-mini-stat">
-                  <div class="plant-mini-val">65%</div>
-                  <div class="plant-mini-label">💧 Ылғалдылық</div>
-                </div>
-                <div class="plant-mini-stat">
-                  <div class="plant-mini-val">21°C</div>
-                  <div class="plant-mini-label">🌡️ Температура</div>
-                </div>
-              </div>
-              <div class="plant-health-label"><span>Денсаулық</span><span style="color:var(--green-main)">88%</span></div>
-              <div class="health-bar-wrap"><div class="health-bar-fill" style="width:88%"></div></div>
-            </div>
-            <div class="plant-card-footer">
-              <span class="plant-card-date">Отырғызылды: 22.08.2023</span>
-              <span class="plant-card-action">Толығырақ →</span>
-            </div>
-          </div>
-
-          <div class="plant-card-detail">
-            <div class="plant-card-top">
-              <div class="plant-big-icon">🌵</div>
-              <div class="plant-status-dot dot-red"></div>
-            </div>
-            <div class="plant-card-info">
-              <div class="plant-card-name">Кактус</div>
-              <div class="plant-card-type">Шөлді өсімдік · А-05</div>
-              <div class="plant-mini-stats">
-                <div class="plant-mini-stat" style="background:#fee2e2">
-                  <div class="plant-mini-val" style="color:#dc2626">91%</div>
-                  <div class="plant-mini-label">💧 Артық су</div>
-                </div>
-                <div class="plant-mini-stat" style="background:#fee2e2">
-                  <div class="plant-mini-val" style="color:#dc2626">31°C</div>
-                  <div class="plant-mini-label">🌡️ Жоғары</div>
-                </div>
-              </div>
-              <div class="plant-health-label"><span>Денсаулық</span><span style="color:#ef4444">28%</span></div>
-              <div class="health-bar-wrap"><div class="health-bar-fill" style="width:28%;background:linear-gradient(90deg,#ef4444,#f87171)"></div></div>
-            </div>
-            <div class="plant-card-footer" style="background:#fee2e2">
-              <span class="plant-card-date">Отырғызылды: 03.07.2024</span>
-              <span class="plant-card-action" style="color:#dc2626">Шара қабылдау →</span>
-            </div>
-          </div>
-
-          <div class="plant-card-detail">
-            <div class="plant-card-top">
-              <div class="plant-big-icon">🌿</div>
-              <div class="plant-status-dot dot-green"></div>
-            </div>
-            <div class="plant-card-info">
-              <div class="plant-card-name">Тобылғы</div>
-              <div class="plant-card-type">Бұта · В-11</div>
-              <div class="plant-mini-stats">
-                <div class="plant-mini-stat">
-                  <div class="plant-mini-val">58%</div>
-                  <div class="plant-mini-label">💧 Ылғалдылық</div>
-                </div>
-                <div class="plant-mini-stat">
-                  <div class="plant-mini-val">20°C</div>
-                  <div class="plant-mini-label">🌡️ Температура</div>
-                </div>
-              </div>
-              <div class="plant-health-label"><span>Денсаулық</span><span style="color:var(--green-main)">95%</span></div>
-              <div class="health-bar-wrap"><div class="health-bar-fill" style="width:95%"></div></div>
-            </div>
-            <div class="plant-card-footer">
-              <span class="plant-card-date">Отырғызылды: 18.04.2021</span>
-              <span class="plant-card-action">Толығырақ →</span>
-            </div>
-          </div>
-
-        </div>
+        <span class="nav-logo-text">ЖасылБақ</span>
+        <span class="nav-logo-sub">Өсімдіктер мониторингі</span>
       </div>
-    </div>
-  </div>
-</main>
-
-<!-- ADD PLANT MODAL -->
-<div class="modal-overlay" id="addModal">
-  <div class="modal">
-    <div class="modal-title">🌱 Жаңа өсімдік қосу</div>
-    <div class="form-group">
-      <label class="form-label">Өсімдіктің атауы</label>
-      <input type="text" class="form-input" placeholder="Мысалы: Алма ағашы" />
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Түрі</label>
-        <select class="form-input">
-          <option>Жеміс ағашы</option>
-          <option>Гүл</option>
-          <option>Бұта</option>
-          <option>Үй өсімдігі</option>
-          <option>Қылқан жапырақты</option>
-          <option>Басқа</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Сектор</label>
-        <input type="text" class="form-input" placeholder="Мысалы: А-01" />
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Отырғызылған күні</label>
-      <input type="date" class="form-input" />
-    </div>
-    <div class="form-group">
-      <label class="form-label">Суару жиілігі</label>
-      <select class="form-input">
-        <option>Күнде бір рет</option>
-        <option>2 күнде бір рет</option>
-        <option>Аптасына бір рет</option>
-        <option>2 аптада бір рет</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Қосымша ескерту</label>
-      <input type="text" class="form-input" placeholder="Мысалы: Жарықтан қорғау керек" />
-    </div>
-    <div class="modal-actions">
-      <button class="btn btn-primary" style="flex:1" onclick="closeModal()">✓ Қосу</button>
-      <button class="btn btn-secondary" onclick="closeModal()">Бас тарту</button>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="index.html" class="nav-logo"><div class="nav-logo-icon">🌱</div><span class="nav-logo-text" style="color:white">ЖасылБақ</span></a>
-      <p>Қазақстанның өсімдіктер мониторинг платформасы.</p>
-    </div>
-    <div class="footer-col"><h4>Бөлімдер</h4><ul>
-      <li><a href="monitoring.html">Мониторинг</a></li>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Басты бет</a></li>
+      <li><a href="monitoring.html" class="active">Мониторинг</a></li>
       <li><a href="community.html">Қоғамдастық</a></li>
       <li><a href="store.html">Дүкен</a></li>
       <li><a href="news.html">Жаңалықтар</a></li>
-    </ul></div>
-    <div class="footer-col"><h4>Байланыс</h4><ul><li><a href="#">info@jasylbaq.kz</a></li></ul></div>
-    <div class="footer-col"></div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 ЖасылБақ.</span><span>Қазақстанда жасалған 🇰🇿</span>
-  </div>
-</footer>
+    </ul>
+  </nav>
 
-<script>
-  function openModal() { document.getElementById('addModal').classList.add('open'); }
-  function closeModal() { document.getElementById('addModal').classList.remove('open'); }
-  document.getElementById('addModal').addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
-  });
-  document.querySelectorAll('.filter-tab').forEach(tab => {
-    tab.addEventListener('click', function() {
-      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-      this.classList.add('active');
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <div class="section-label">Мониторинг</div>
+        <h1 class="section-title">Менің бақшам</h1>
+        <p class="section-sub">Өсімдіктеріңізді тіркеп, олардың денсаулығын, ылғалдылығын және өсу динамикасын
+          бақылаңыз.</p>
+      </div>
+    </div>
+
+    <div class="dashboard-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <!-- WEATHER -->
+        <div class="weather-widget">
+          <div class="weather-city">📍 Алматы, ҚЗ</div>
+          <div class="weather-temp">+18°</div>
+          <div class="weather-desc">☁️ Бұлтты, жаңбыр күтілмейді</div>
+          <div class="weather-row">
+            <div class="weather-item">
+              <div class="weather-item-val">62%</div>
+              <div class="weather-item-label">Ылғалдылық</div>
+            </div>
+            <div class="weather-item">
+              <div class="weather-item-val">12 км/с</div>
+              <div class="weather-item-label">Жел</div>
+            </div>
+            <div class="weather-item">
+              <div class="weather-item-val">UV 3</div>
+              <div class="weather-item-label">Күн сәулесі</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADD PLANT -->
+        <button class="add-plant-btn" onclick="openModal()">
+          ＋ Жаңа өсімдік қосу
+        </button>
+
+        <!-- REMINDERS -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-header">
+            <span class="sidebar-card-title">🔔 Еске салғыштар</span>
+            <span class="badge badge-green">4</span>
+          </div>
+          <div class="sidebar-card-body">
+            <div class="reminder-item">
+              <div class="reminder-icon" style="background:#fee2e2">💧</div>
+              <div>
+                <div class="reminder-title">Раушан гүлін суару</div>
+                <div class="reminder-time reminder-urgent">⚠ Мерзімі өтіп кетті!</div>
+              </div>
+            </div>
+            <div class="reminder-item">
+              <div class="reminder-icon" style="background:#e8f5ec">🌿</div>
+              <div>
+                <div class="reminder-title">Монстераны тексеру</div>
+                <div class="reminder-time">Бүгін, 18:00</div>
+              </div>
+            </div>
+            <div class="reminder-item">
+              <div class="reminder-icon" style="background:#fff8e6">🌱</div>
+              <div>
+                <div class="reminder-title">Шыршаға тыңайтқыш</div>
+                <div class="reminder-time">Ертең, 09:00</div>
+              </div>
+            </div>
+            <div class="reminder-item">
+              <div class="reminder-icon" style="background:#e8f5ec">✂️</div>
+              <div>
+                <div class="reminder-title">Алма ағашын кесу</div>
+                <div class="reminder-time">2 күннен кейін</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CALENDAR -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-header">
+            <span class="sidebar-card-title">📅 Сәуір 2025</span>
+          </div>
+          <div class="sidebar-card-body">
+            <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center">
+              <div style="font-size:10px;color:var(--text-light);font-weight:700;padding:4px 0">Дс</div>
+              <div style="font-size:10px;color:var(--text-light);font-weight:700;padding:4px 0">Сс</div>
+              <div style="font-size:10px;color:var(--text-light);font-weight:700;padding:4px 0">Ср</div>
+              <div style="font-size:10px;color:var(--text-light);font-weight:700;padding:4px 0">Бс</div>
+              <div style="font-size:10px;color:var(--text-light);font-weight:700;padding:4px 0">Жм</div>
+              <div style="font-size:10px;color:var(--text-light);font-weight:700;padding:4px 0">Сб</div>
+              <div style="font-size:10px;color:var(--text-light);font-weight:700;padding:4px 0">Жс</div>
+              <div style="font-size:11px;color:var(--text-light);padding:5px 2px"></div>
+              <div style="font-size:11px;color:var(--text-light);padding:5px 2px"></div>
+              <div style="font-size:11px;color:var(--text-light);padding:5px 2px"></div>
+              <div style="font-size:11px;color:var(--text-light);padding:5px 2px">1</div>
+              <div style="font-size:11px;color:var(--text-light);padding:5px 2px">2</div>
+              <div style="font-size:11px;color:var(--text-light);padding:5px 2px">3</div>
+              <div style="font-size:11px;color:var(--text-light);padding:5px 2px">4</div>
+              <div style="font-size:11px;padding:5px 2px">5</div>
+              <div style="font-size:11px;padding:5px 2px">6</div>
+              <div style="font-size:11px;padding:5px 2px">7</div>
+              <div style="font-size:11px;padding:5px 2px">8</div>
+              <div
+                style="font-size:11px;background:var(--green-mist);border-radius:6px;padding:5px 2px;font-weight:700;color:var(--green-main)">
+                9</div>
+              <div style="font-size:11px;padding:5px 2px">10</div>
+              <div style="font-size:11px;padding:5px 2px">11</div>
+              <div
+                style="font-size:11px;background:var(--green-main);border-radius:6px;padding:5px 2px;font-weight:700;color:white">
+                12</div>
+              <div style="font-size:11px;padding:5px 2px">13</div>
+              <div style="font-size:11px;padding:5px 2px">14</div>
+              <div style="font-size:11px;padding:5px 2px">15</div>
+              <div style="font-size:11px;padding:5px 2px">16</div>
+              <div style="font-size:11px;padding:5px 2px">17</div>
+              <div style="font-size:11px;padding:5px 2px">18</div>
+              <div
+                style="font-size:11px;background:var(--green-mist);border-radius:6px;padding:5px 2px;font-weight:700;color:var(--green-main)">
+                19</div>
+              <div style="font-size:11px;padding:5px 2px">20</div>
+            </div>
+            <div style="margin-top:12px;font-size:12px;color:var(--text-light)">
+              <span
+                style="display:inline-block;width:10px;height:10px;background:var(--green-main);border-radius:3px;margin-right:5px"></span>Бүгін
+              <span
+                style="display:inline-block;width:10px;height:10px;background:var(--green-mist);border-radius:3px;margin-left:10px;margin-right:5px"></span>Іс-шара
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <div class="main-content">
+        <!-- STATS -->
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Барлық өсімдік</div>
+            <div class="stat-change">↑ +0 осы айда</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" style="color:var(--green-main)">0</div>
+            <div class="stat-label">Дені сау</div>
+            <div class="stat-change">0% жалпы</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" style="color:#f59e0b">0</div>
+            <div class="stat-label">Назар қажет</div>
+            <div class="stat-change">↓ -0 кешеден</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" style="color:#ef4444">0</div>
+            <div class="stat-label">Шұғыл жағдай</div>
+            <div class="stat-change" style="color:#ef4444">Дереу шара керек</div>
+          </div>
+        </div>
+
+        <!-- GROWTH CHART -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title">📈 Өсімдік саны динамикасы</div>
+              <div class="chart-sub">2024 жылдан бері</div>
+            </div>
+            <select class="form-input" style="width:auto;padding:6px 12px;font-size:13px">
+              <option>2025</option>
+              <option>2024</option>
+            </select>
+          </div>
+          <div class="chart-area">
+            <div class="chart-bar-wrap">
+              <div class="chart-val">8</div>
+              <div class="chart-bar" style="height:40%"></div>
+              <div class="chart-month">Қаң</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-val">10</div>
+              <div class="chart-bar" style="height:50%"></div>
+              <div class="chart-month">Ақп</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-val">12</div>
+              <div class="chart-bar" style="height:60%"></div>
+              <div class="chart-month">Нау</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-val">15</div>
+              <div class="chart-bar" style="height:75%"></div>
+              <div class="chart-month">Сәу</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-val">18</div>
+              <div class="chart-bar" style="height:90%"></div>
+              <div class="chart-month">Мам</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-val">20</div>
+              <div class="chart-bar" style="height:100%"></div>
+              <div class="chart-month">Мау</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-val">22</div>
+              <div class="chart-bar"
+                style="height:110%;background:linear-gradient(180deg,var(--green-light),var(--green-main))"></div>
+              <div class="chart-month">Шіл</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-val">24</div>
+              <div class="chart-bar" style="height:120%"></div>
+              <div class="chart-month">Там</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PLANTS -->
+        <div>
+          <div class="plants-header">
+            <div>
+              <div style="font-size:16px;font-weight:700;color:var(--green-dark)">Менің өсімдіктерім</div>
+              <div style="font-size:13px;color:var(--text-light);margin-top:2px">24 өсімдік · 4 сектор</div>
+            </div>
+            <div class="filter-tabs">
+              <button class="filter-tab active">Барлығы</button>
+              <button class="filter-tab">Сау</button>
+              <button class="filter-tab">Ескерту</button>
+              <button class="filter-tab">Дабыл</button>
+            </div>
+          </div>
+          <div class="plants-grid" style="margin-top:16px">
+
+            <div class="plant-card-detail">
+              <div class="plant-card-top">
+                <div class="plant-big-icon">🍎</div>
+                <div class="plant-status-dot dot-green"></div>
+              </div>
+              <div class="plant-card-info">
+                <div class="plant-card-name">Алма ағашы</div>
+                <div class="plant-card-type">Жеміс ағашы · Сектор А-01</div>
+                <div class="plant-mini-stats">
+                  <div class="plant-mini-stat">
+                    <div class="plant-mini-val">72%</div>
+                    <div class="plant-mini-label">💧 Ылғалдылық</div>
+                  </div>
+                  <div class="plant-mini-stat">
+                    <div class="plant-mini-val">22°C</div>
+                    <div class="plant-mini-label">🌡️ Температура</div>
+                  </div>
+                </div>
+                <div class="plant-health-label"><span>Денсаулық</span><span style="color:var(--green-main)">0%</span>
+                </div>
+                <div class="health-bar-wrap">
+                  <div class="health-bar-fill" style="width:0%"></div>
+                </div>
+              </div>
+              <div class="plant-card-footer">
+                <span class="plant-card-date">Отырғызылды: 15.03.2022</span>
+                <span class="plant-card-action">Толығырақ →</span>
+              </div>
+            </div>
+
+            <div class="plant-card-detail" style="border-color:rgba(239,68,68,0.3)">
+              <div class="plant-card-top">
+                <div class="plant-big-icon">🌹</div>
+                <div class="plant-status-dot dot-red"></div>
+              </div>
+              <div class="plant-card-info">
+                <div class="plant-card-name">Раушан гүлі</div>
+                <div class="plant-card-type">Гүл · Сектор Б-03</div>
+                <div class="plant-mini-stats">
+                  <div class="plant-mini-stat" style="background:#fee2e2">
+                    <div class="plant-mini-val" style="color:#dc2626">0%</div>
+                    <div class="plant-mini-label">💧 Ылғалдылық</div>
+                  </div>
+                  <div class="plant-mini-stat">
+                    <div class="plant-mini-val">26°C</div>
+                    <div class="plant-mini-label">🌡️ Температура</div>
+                  </div>
+                </div>
+                <div class="plant-health-label"><span>Денсаулық</span><span style="color:#ef4444">0%</span></div>
+                <div class="health-bar-wrap">
+                  <div class="health-bar-fill" style="width:0%;background:linear-gradient(90deg,#ef4444,#f87171)"></div>
+                </div>
+              </div>
+              <div class="plant-card-footer" style="background:#fee2e2">
+                <span class="plant-card-date">Отырғызылды: 01.05.2024</span>
+                <span class="plant-card-action" style="color:#dc2626">Шара қабылдау →</span>
+              </div>
+            </div>
+
+            <div class="plant-card-detail" style="border-color:rgba(245,158,11,0.3)">
+              <div class="plant-card-top">
+                <div class="plant-big-icon">🌲</div>
+                <div class="plant-status-dot dot-yellow"></div>
+              </div>
+              <div class="plant-card-info">
+                <div class="plant-card-name">Шырша</div>
+                <div class="plant-card-type">Қылқан жапырақты · В-07</div>
+                <div class="plant-mini-stats">
+                  <div class="plant-mini-stat" style="background:#fff8e6">
+                    <div class="plant-mini-val" style="color:#f59e0b">0%</div>
+                    <div class="plant-mini-label">💧 Ылғалдылық</div>
+                  </div>
+                  <div class="plant-mini-stat">
+                    <div class="plant-mini-val">19°C</div>
+                    <div class="plant-mini-label">🌡️ Температура</div>
+                  </div>
+                </div>
+                <div class="plant-health-label"><span>Денсаулық</span><span style="color:#f59e0b">0%</span></div>
+                <div class="health-bar-wrap">
+                  <div class="health-bar-fill" style="width:0%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div>
+                </div>
+              </div>
+              <div class="plant-card-footer" style="background:#fff8e6">
+                <span class="plant-card-date">Отырғызылды: 10.11.2020</span>
+                <span class="plant-card-action" style="color:#f59e0b">Тексеру →</span>
+              </div>
+            </div>
+
+            <div class="plant-card-detail">
+              <div class="plant-card-top">
+                <div class="plant-big-icon">🪴</div>
+                <div class="plant-status-dot dot-green"></div>
+              </div>
+              <div class="plant-card-info">
+                <div class="plant-card-name">Монстера</div>
+                <div class="plant-card-type">Үй өсімдігі · Г-02</div>
+                <div class="plant-mini-stats">
+                  <div class="plant-mini-stat">
+                    <div class="plant-mini-val">65%</div>
+                    <div class="plant-mini-label">💧 Ылғалдылық</div>
+                  </div>
+                  <div class="plant-mini-stat">
+                    <div class="plant-mini-val">21°C</div>
+                    <div class="plant-mini-label">🌡️ Температура</div>
+                  </div>
+                </div>
+                <div class="plant-health-label"><span>Денсаулық</span><span style="color:var(--green-main)">88%</span>
+                </div>
+                <div class="health-bar-wrap">
+                  <div class="health-bar-fill" style="width:88%"></div>
+                </div>
+              </div>
+              <div class="plant-card-footer">
+                <span class="plant-card-date">Отырғызылды: 22.08.2023</span>
+                <span class="plant-card-action">Толығырақ →</span>
+              </div>
+            </div>
+
+            <div class="plant-card-detail">
+              <div class="plant-card-top">
+                <div class="plant-big-icon">🌵</div>
+                <div class="plant-status-dot dot-red"></div>
+              </div>
+              <div class="plant-card-info">
+                <div class="plant-card-name">Кактус</div>
+                <div class="plant-card-type">Шөлді өсімдік · А-05</div>
+                <div class="plant-mini-stats">
+                  <div class="plant-mini-stat" style="background:#fee2e2">
+                    <div class="plant-mini-val" style="color:#dc2626">91%</div>
+                    <div class="plant-mini-label">💧 Артық су</div>
+                  </div>
+                  <div class="plant-mini-stat" style="background:#fee2e2">
+                    <div class="plant-mini-val" style="color:#dc2626">31°C</div>
+                    <div class="plant-mini-label">🌡️ Жоғары</div>
+                  </div>
+                </div>
+                <div class="plant-health-label"><span>Денсаулық</span><span style="color:#ef4444">28%</span></div>
+                <div class="health-bar-wrap">
+                  <div class="health-bar-fill" style="width:28%;background:linear-gradient(90deg,#ef4444,#f87171)">
+                  </div>
+                </div>
+              </div>
+              <div class="plant-card-footer" style="background:#fee2e2">
+                <span class="plant-card-date">Отырғызылды: 03.07.2024</span>
+                <span class="plant-card-action" style="color:#dc2626">Шара қабылдау →</span>
+              </div>
+            </div>
+
+            <div class="plant-card-detail">
+              <div class="plant-card-top">
+                <div class="plant-big-icon">🌿</div>
+                <div class="plant-status-dot dot-green"></div>
+              </div>
+              <div class="plant-card-info">
+                <div class="plant-card-name">Тобылғы</div>
+                <div class="plant-card-type">Бұта · В-11</div>
+                <div class="plant-mini-stats">
+                  <div class="plant-mini-stat">
+                    <div class="plant-mini-val">58%</div>
+                    <div class="plant-mini-label">💧 Ылғалдылық</div>
+                  </div>
+                  <div class="plant-mini-stat">
+                    <div class="plant-mini-val">20°C</div>
+                    <div class="plant-mini-label">🌡️ Температура</div>
+                  </div>
+                </div>
+                <div class="plant-health-label"><span>Денсаулық</span><span style="color:var(--green-main)">95%</span>
+                </div>
+                <div class="health-bar-wrap">
+                  <div class="health-bar-fill" style="width:95%"></div>
+                </div>
+              </div>
+              <div class="plant-card-footer">
+                <span class="plant-card-date">Отырғызылды: 18.04.2021</span>
+                <span class="plant-card-action">Толығырақ →</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ADD PLANT MODAL -->
+  <div class="modal-overlay" id="addModal">
+    <div class="modal">
+      <form onsubmit="handleAddPlant(event)">
+        <div class="modal-title">🌱 Жаңа өсімдік қосу</div>
+        <div class="form-group">
+          <label class="form-label">Өсімдіктің атауы</label>
+          <input type="text" class="form-input" name="plantName" placeholder="Мысалы: Алма ағашы" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Түрі</label>
+            <select class="form-input" name="plantType" required>
+              <option>Жеміс ағашы</option>
+              <option>Гүл</option>
+              <option>Бұта</option>
+              <option>Үй өсімдігі</option>
+              <option>Қылқан жапырақты</option>
+              <option>Басқа</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Сектор</label>
+            <input type="text" class="form-input" name="sector" placeholder="Мысалы: А-01" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Отырғызылған күні</label>
+          <input type="date" class="form-input" name="plantedDate" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Суару жиілігі</label>
+          <select class="form-input" name="waterFrequency" required>
+            <option>Күнде бір рет</option>
+            <option>2 күнде бір рет</option>
+            <option>Аптасына бір рет</option>
+            <option>2 аптада бір рет</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Қосымша ескерту</label>
+          <input type="text" class="form-input" name="notes" placeholder="Мысалы: Жарықтан қорғау керек" />
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary" style="flex:1">✓ Қосу</button>
+          <button type="button" class="btn btn-secondary" onclick="closeModal()">Бас тарту</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-icon">🌱</div><span class="nav-logo-text" style="color:white">ЖасылБақ</span>
+        </a>
+        <p>Қазақстанның өсімдіктер мониторинг платформасы.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Бөлімдер</h4>
+        <ul>
+          <li><a href="monitoring.html">Мониторинг</a></li>
+          <li><a href="community.html">Қоғамдастық</a></li>
+          <li><a href="store.html">Дүкен</a></li>
+          <li><a href="news.html">Жаңалықтар</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Байланыс</h4>
+        <ul>
+          <li><a href="#">info@jasylbaq.kz</a></li>
+        </ul>
+      </div>
+      <div class="footer-col"></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ЖасылБақ.</span><span>Қазақстанда жасалған 🇰🇿</span>
+    </div>
+  </footer>
+
+  <script src="plants.js"></script>
+  <script>
+    function openModal() { document.getElementById('addModal').classList.add('open'); }
+    function closeModal() { document.getElementById('addModal').classList.remove('open'); }
+    document.getElementById('addModal').addEventListener('click', function (e) {
+      if (e.target === this) closeModal();
     });
-  });
-</script>
+    document.querySelectorAll('.filter-tab').forEach(tab => {
+      tab.addEventListener('click', function () {
+        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
 </body>
+
 </html>
