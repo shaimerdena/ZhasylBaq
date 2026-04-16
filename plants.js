@@ -214,7 +214,7 @@ function handleAddPlant(event) {
     form.reset();
 
     // Показать уведомление
-    alert(`${plantData.name} успешно добавлено!`);
+    alert(`${plantData.name} сәтті қосылды!`);
 }
 
 // Инициализировать при загрузке страницы
