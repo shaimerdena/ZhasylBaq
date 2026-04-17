@@ -72,7 +72,8 @@ function deletePlant(plantId) {
     const plants = getPlantsFromStorage();
     const filteredPlants = plants.filter(p => p.id !== plantId);
     savePlantsToStorage(filteredPlants);
-    location.reload();
+    updateStats();
+    renderPlants();
 }
 
 // Обновить данные растения
@@ -92,11 +93,6 @@ function updatePlant(plantId, updates) {
 function updateStats() {
     const plants = getPlantsFromStorage();
 
-    if (plants.length === 0) {
-        console.log('Растения не добавлены');
-        return;
-    }
-
     // Подсчёт здоровых растений
     const healthyPlants = plants.filter(p => p.health >= 70).length;
     const cautionPlants = plants.filter(p => p.health >= 40 && p.health < 70).length;
@@ -105,10 +101,26 @@ function updateStats() {
     // Обновление статистики в DOM
     const statCards = document.querySelectorAll('.stat-card');
     if (statCards.length >= 4) {
+        // Всего растений
         statCards[0].querySelector('.stat-value').textContent = plants.length;
+        statCards[0].querySelector('.stat-change').textContent = '↑ +' + plants.length + ' осы айда';
+
+        // Здоровые растения
         statCards[1].querySelector('.stat-value').textContent = healthyPlants;
+        const healthyPercent = plants.length > 0 ? Math.round((healthyPlants / plants.length) * 100) : 0;
+        statCards[1].querySelector('.stat-change').textContent = healthyPercent + '% жалпы';
+
+        // Требуют внимания
         statCards[2].querySelector('.stat-value').textContent = cautionPlants;
+        const prevCaution = cautionPlants > 0 ? cautionPlants - 1 : 0;
+        statCards[2].querySelector('.stat-change').textContent = '↓ -' + prevCaution + ' кешеден';
+
+        // Критические
         statCards[3].querySelector('.stat-value').textContent = urgentPlants;
+        if (urgentPlants > 0) {
+            statCards[3].querySelector('.stat-change').textContent = 'Дереу шара керек';
+            statCards[3].querySelector('.stat-change').style.color = '#ef4444';
+        }
     }
 }
 
